@@ -8,6 +8,7 @@ class SpeakBox extends Component {
     e.preventDefault();
     var msg = new SpeechSynthesisUtterance(this.message.value);
     window.speechSynthesis.speak(msg);
+    this.message.value = null;
   }
   render(){
     return(
