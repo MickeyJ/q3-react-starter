@@ -1,5 +1,7 @@
-AAC App - ( Augmentative and Alternative Communication )
-=======================================================
+AAC App 
+=======
+####( Augmentative and Alternative Communication )
+
 __Install the things__
 ```bash
   
