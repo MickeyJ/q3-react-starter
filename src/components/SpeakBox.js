@@ -6,14 +6,14 @@ class SpeakBox extends Component {
   }
   sayIt(e){
     e.preventDefault();
-    var msg = new SpeechSynthesisUtterance(this.message.value);
+    const msg = new SpeechSynthesisUtterance(this.message.value);
     window.speechSynthesis.speak(msg);
     this.message.value = null;
   }
   render(){
     return(
       <div>
-        <form onSubmit={this.sayIt.bind(this)} >
+        <form onSubmit={(e) => this.sayIt(e)}>
           <input
             type="text"
             placeholder="What to say?"

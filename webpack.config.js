@@ -1,5 +1,4 @@
 
-
 const config ={
   entry: './src',
   output: {

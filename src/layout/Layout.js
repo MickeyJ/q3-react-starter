@@ -6,12 +6,13 @@ import SpeakBox from '../components/SpeakBox';
 const Layout = () => {
   return (
     <div> 
+      
       <NavHeader />
+      
       <SpeakBox />
     
     </div>
   )
 };
+
 export default Layout
-
-
