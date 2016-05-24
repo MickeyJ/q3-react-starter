@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import axios from 'axios'
 
 class RegisterPage extends Component{
   getNameText(ref){
@@ -15,6 +16,19 @@ class RegisterPage extends Component{
     console.log(this.name.value);
     console.log(this.email.value);
     console.log(this.password.value);
+      axios.post('http://localhost:3000/api/v1/signup', {
+          name: this.name.value,
+          email: this.email.value,
+          password: this.password.value
+      })
+          .then(function (response) {
+              console.log("yay", response.data);
+              //JWT.save(response.token);
+          })
+          .catch(function (response) {
+              console.log("catch blocked.. " + response);
+          });
+
   }
   render(){
     return(
