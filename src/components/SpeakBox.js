@@ -21,7 +21,12 @@ class SpeakBox extends Component {
             placeholder="What to say?"
             ref={(ref) => this.getInputText(ref)}
           />
-          <button className="btn btn-info" type="submit">Say It</button>
+          <input 
+            type="submit"
+            value="Say It"
+            onTouchStart={this.sayIt.bind(this)} 
+            className="btn btn-info" 
+           />
         </form>
       </div>
     )

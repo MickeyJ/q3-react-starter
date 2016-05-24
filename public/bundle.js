@@ -26079,11 +26079,12 @@
 	              return _this2.getInputText(_ref);
 	            }
 	          }),
-	          _react2.default.createElement(
-	            'button',
-	            { className: 'btn btn-info', type: 'submit' },
-	            'Say It'
-	          )
+	          _react2.default.createElement('input', {
+	            type: 'submit',
+	            value: 'Say It',
+	            onTouchStart: this.sayIt.bind(this),
+	            className: 'btn btn-info'
+	          })
 	        )
 	      );
 	    }
