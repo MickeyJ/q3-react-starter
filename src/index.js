@@ -1,9 +1,9 @@
 import React from 'react'
 import { render } from 'react-dom'
 
-import Layout from './layout/Layout'
+import Routes from './routes'
 
 render(
-  <Layout />,
+  <Routes />,
   document.getElementById('app')
 );

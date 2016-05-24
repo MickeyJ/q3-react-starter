@@ -8,19 +8,20 @@ class SpeakBox extends Component {
   }
   sayIt(e){
     e.preventDefault();
-    sayMessage(this.message.value, 'Fred');
+    sayMessage(this.message.value, 'Carlos');
     this.message.value = null;
   }
   render(){
     return(
       <div>
-        <form onSubmit={this.sayIt.bind(this)}>
+        <form className="form-inline" onSubmit={this.sayIt.bind(this)}>
           <input
             type="text"
+            className="form-control"
             placeholder="What to say?"
             ref={(ref) => this.getInputText(ref)}
           />
-          <button type="submit">Say It</button>
+          <button className="btn btn-info" type="submit">Say It</button>
         </form>
       </div>
     )
