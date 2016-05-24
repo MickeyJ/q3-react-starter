@@ -43,9 +43,9 @@ class AuthPage extends Component{
       )
     } else {
       return(
-        <form>
-          <input className="form-control" type="text" placeholder="Email"/>
-          <input className="form-control" type="password" placeholder="Password"/>
+        <form onSubmit={this.handleSubmit.bind(this)}>
+          <input className="form-control" type="text" placeholder="Email" ref={(ref) => this.getEmailText(ref)}/>
+          <input className="form-control" type="password" placeholder="Password" ref={(ref) => this.getPassText(ref)}/>
           <input className="btn btn-success" type="submit" value="Login"/>
         </form>
       )
