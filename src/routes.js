@@ -5,6 +5,7 @@ import Layout from './layout/Layout'
 import HomePage from './pages/HomePage'
 import AboutPage from './pages/AboutPage'
 import AuthPage from './pages/AuthPage'
+import QuickSpeechPage from './pages/QuickSpeech'
 
 export default class Routes extends Component {
   render(){
@@ -16,6 +17,7 @@ export default class Routes extends Component {
             <Route path="/register" component={AuthPage}/>
           </Route>
           <Route path="/about" component={AboutPage}/>
+          <Route path="/quick" component={QuickSpeechPage}/>
         </Route>
       </Router>
     )
