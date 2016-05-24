@@ -1,12 +1,11 @@
 import React from 'react'
-
-import IconLink from './IconLink'
+import { Link } from 'react-router'
 
 const Layout = (props) => (
   <div className="container-fluid">
-    
-    <IconLink pathTo={"/"} title={'Home'}/>
-    <IconLink pathTo={"/about"} title={'About'}/>
+
+    <Link to="/">Home</Link>
+    <Link to="/about">About</Link>
     
     <main>
       {props.children}
