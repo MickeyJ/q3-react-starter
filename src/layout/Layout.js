@@ -1,11 +1,17 @@
 import React from 'react'
 
-import NavHeader from './NavHeader'
+import IconLink from './IconLink'
 
 const Layout = (props) => (
-  <div>
-    <NavHeader />
-    {props.children}
+  <div className="container-fluid">
+    
+    <IconLink pathTo={"/"} title={'Home'}/>
+    <IconLink pathTo={"/about"} title={'About'}/>
+    
+    <main>
+      {props.children}
+    </main>
+    
   </div>
 );
 

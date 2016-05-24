@@ -1,8 +1,7 @@
 
-const { speechSynthesis, SpeechSynthesisUtterance } = window;
+const { speechSynthesis } = window;
 
-export default function sayMessage(input, voice){
-  const msg = new SpeechSynthesisUtterance(input);
+export function setVoice(msg, voice){
   msg.lang = 'en-US';
   msg.voiceURI = 'native';
   msg.volume = 1;  // 0 - 1
@@ -11,5 +10,10 @@ export default function sayMessage(input, voice){
   msg.voice = speechSynthesis.getVoices().find((v) =>(
     v.name == voice
   ));
-  speechSynthesis.speak(msg)
+  return msg
+}
+
+export function sayMessage(msg, input){
+  msg.text = input;
+  speechSynthesis.speak(msg);
 }

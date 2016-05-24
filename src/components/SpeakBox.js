@@ -1,6 +1,8 @@
 import React, { Component } from 'react'
 
-import sayMessage from '../helpers/say_message'
+import {setVoice, sayMessage} from '../helpers/say_message'
+
+const { SpeechSynthesisUtterance } = window;
 
 class SpeakBox extends Component {
   getInputText(ref){
@@ -8,16 +10,18 @@ class SpeakBox extends Component {
   }
   sayIt(e){
     e.preventDefault();
-    sayMessage(this.message.value, 'Carlos');
+    const msg = new SpeechSynthesisUtterance();
+    setVoice(msg, 'Carlos');
+    sayMessage(msg, this.message.value);
     this.message.value = null;
   }
   render(){
-    return(
+    return (
       <div>
         <form className="form-inline" onSubmit={this.sayIt.bind(this)}>
           <input
             type="text"
-            className="form-control"
+            className="form-control speak-input"
             placeholder="What to say?"
             ref={(ref) => this.getInputText(ref)}
           />

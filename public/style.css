@@ -7,7 +7,28 @@ nav{
   margin-bottom: 2%;
 }
 
-a {
-  color: #00B7FF;
+.icon-link{
+  display: block;
+  margin-right: 1%;
+  margin-bottom: 1%;
+  width: 280px;
+  height: 300px;
+  color: white;
+  background: CadetBlue;
+  border-radius: 5px 80px 5px 5px;
 }
 
+main{
+  clear: both;
+}
+
+.speak-input{
+  height: 50px;
+  width: 40vw !important;
+  font-size: 1.5em;
+}
+
+input[type='submit']{
+  height: 50px;
+  font-size: 1.5em;
+}
