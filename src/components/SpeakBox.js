@@ -21,10 +21,11 @@ class SpeakBox extends Component {
             placeholder="What to say?"
             ref={(ref) => this.getInputText(ref)}
           />
-          <input 
+          <input
             type="submit"
             value="Say It"
-            className="btn btn-info" 
+            onClick={this.sayIt.bind(this)}
+            className="btn btn-info"
            />
         </form>
       </div>
