@@ -8,12 +8,16 @@ const Layout = (props) => (
     <span> | </span>
     <Link to="/about">About</Link>
     <span> | </span>
+    <Link to='/register'>Sign Up</Link>
+    <span> | </span>
+    <Link to='/login'>Log In</Link>
+    <span> | </span>
     <Link to="/quick">Quick Speak</Link>
 
     <main>
       {props.children}
     </main>
-    
+
   </div>
 );
 
