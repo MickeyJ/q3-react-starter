@@ -1,27 +1,6 @@
-
-body {
-  padding: 15px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
-}
-
-nav{
-  margin-bottom: 2%;
-}
-
-.icon-link{
-  display: block;
-  margin-right: 1%;
-  margin-bottom: 1%;
-  width: 280px;
-  height: 300px;
-  color: white;
-  background: CadetBlue;
-  border-radius: 5px 80px 5px 5px;
-}
-
-main{
-  clear: both;
-}
+@import 'commons/base';
+@import 'commons/nav';
+@import 'components/quickspeech';
 
 .speak-input{
   height: 50px;
@@ -36,4 +15,8 @@ input[type='submit']{
 
 h1{
   color: DodgerBlue;
+}
+
+h3 {
+  color: white;
 }

@@ -11,17 +11,17 @@ export default class QuickSpeechPage extends React.Component{
   }
   render(){
     return(
-      <div>
-        <div>
-          <h3>Words</h3>
+      <div className='quick-speech'>
+        <div className='col-xs-6'>
+          <h3 className='text-center'>Words</h3>
           {words.map((x, i) =>(
-            <button key={i} onClick={() => this.sayIt(x)}>{x}</button>
+            <span className='btn quick-speech-button' key={i} onClick={() => this.sayIt(x)}>{x}</span>
           ))}
         </div>
-        <div>
-          <h3>Phrases</h3>
+        <div className='col-xs-6'>
+          <h3 className='text-center'>Phrases</h3>
           {phrases.map((x, i) =>(
-            <button key={i} onClick={() => this.sayIt(x)}>{x}</button>
+            <span className='btn quick-speech-button' key={i} onClick={() => this.sayIt(x)}>{x}</span>
           ))}
         </div>
       </div>
