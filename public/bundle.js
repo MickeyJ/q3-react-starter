@@ -26082,7 +26082,6 @@
 	          _react2.default.createElement('input', {
 	            type: 'submit',
 	            value: 'Say It',
-	            onTouchStart: this.sayIt.bind(this),
 	            className: 'btn btn-info'
 	          })
 	        )

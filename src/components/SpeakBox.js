@@ -24,7 +24,6 @@ class SpeakBox extends Component {
           <input 
             type="submit"
             value="Say It"
-            onTouchStart={this.sayIt.bind(this)} 
             className="btn btn-info" 
            />
         </form>
