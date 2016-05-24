@@ -1,19 +1,20 @@
 import React, { Component } from 'react'
 
+import sayMessage from '../helpers/say_message'
+
 class SpeakBox extends Component {
   getInputText(ref){
     this.message = ref
   }
   sayIt(e){
     e.preventDefault();
-    const msg = new SpeechSynthesisUtterance(this.message.value);
-    window.speechSynthesis.speak(msg);
+    sayMessage(this.message.value, 'Fred');
     this.message.value = null;
   }
   render(){
     return(
       <div>
-        <form onSubmit={(e) => this.sayIt(e)}>
+        <form onSubmit={this.sayIt.bind(this)}>
           <input
             type="text"
             placeholder="What to say?"
@@ -25,5 +26,5 @@ class SpeakBox extends Component {
     )
   }
 }
-export default SpeakBox
 
+export default SpeakBox

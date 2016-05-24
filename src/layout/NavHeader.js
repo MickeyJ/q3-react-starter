@@ -1,6 +1,6 @@
 import React from 'react'
 
-const NavHeader = props => {
+const NavHeader = () => {
   return (
     <nav>
       <a href="/">Home</a>
