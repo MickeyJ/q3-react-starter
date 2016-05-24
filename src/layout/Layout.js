@@ -5,8 +5,11 @@ const Layout = (props) => (
   <div className="container-fluid">
 
     <Link to="/">Home</Link>
+    <span> | </span>
     <Link to="/about">About</Link>
-    
+    <span> | </span>
+    <Link to="/quick">Quick Speak</Link>
+
     <main>
       {props.children}
     </main>
