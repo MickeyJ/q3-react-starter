@@ -19,7 +19,7 @@ class SpeakBox extends Component {
   }
   render(){
     return (
-      <div className="text-center">
+      <div className="text-center speak-box">
         {voices.map((x, i) =>{
           console.log(x);
         })}
