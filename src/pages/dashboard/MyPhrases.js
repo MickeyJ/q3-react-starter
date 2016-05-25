@@ -1,8 +1,8 @@
 import React from 'react'
 
-import { phrases, words }from '../data/default'
-import { setVoice, sayMessage } from '../helpers/say_message';
-import SpeakBox from '../components/SpeakBox';
+import { phrases, words }from '../../data/default'
+import { setVoice, sayMessage } from '../../helpers/say_message';
+import SpeakBox from '../../components/SpeakBox';
 
 class MyPhrasesPage extends React.Component{
   sayIt(e, text){

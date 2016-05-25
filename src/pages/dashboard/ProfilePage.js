@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 
-import SpeakBox from '../components/SpeakBox';
+import SpeakBox from '../../components/SpeakBox';
 import { connect } from 'react-redux'
 
 const ProfilePage = () => (

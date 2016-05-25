@@ -1,7 +1,7 @@
 import React from 'react'
 
-import IconLink from '../components/IconLink'
-import SpeakBox from '../components/SpeakBox';
+import IconLink from '../../components/IconLink'
+import SpeakBox from '../../components/SpeakBox';
 
 const Dashboard = (props) => (
   <div className="dashboard">

@@ -1,7 +1,7 @@
 import React from 'react'
 
-import { phrases, words }from '../data/default'
-import { setVoice, sayMessage } from '../helpers/say_message';
+import { phrases, words }from '../../data/default'
+import { setVoice, sayMessage } from '../../helpers/say_message';
 
 class QuickSpeechPage extends React.Component{
   sayIt(e, text){

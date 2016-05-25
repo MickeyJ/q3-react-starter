@@ -22,10 +22,7 @@ const Layout = (props) => (
     <Link to="/profile">Profile</Link>
     <span> | </span>
     <Link to="/" onClick={JWT.destroy()}>Logout</Link>
-
-
-
-
+    
     <main>
       {props.children}
     </main>

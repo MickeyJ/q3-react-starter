@@ -6,12 +6,12 @@ import transitionAuth from './helpers/transition_auth'
 import Layout from './layout/Layout'
 import HomePage from './pages/HomePage'
 import AboutPage from './pages/AboutPage'
-import RegisterPage from './pages/RegisterPage'
-import LoginPage from './pages/LoginPage'
-import Dashboard from './pages/Dashboard'
-import ProfilePage from './pages/ProfilePage'
-import QuickSpeechPage from './pages/QuickSpeech'
-import MyPhrasesPage from './pages/MyPhrases'
+import RegisterPage from './pages/auth/RegisterPage'
+import LoginPage from './pages/auth/LoginPage'
+import Dashboard from './pages/dashboard/Dashboard'
+import ProfilePage from './pages/dashboard/ProfilePage'
+import QuickSpeechPage from './pages/dashboard/QuickSpeech'
+import MyPhrasesPage from './pages/dashboard/MyPhrases'
 
 const Routes = () =>(
   <Router history={browserHistory}>

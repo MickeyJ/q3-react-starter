@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 
 import { connect } from 'react-redux'
-import { userRegister } from '../redux/actions'
+import { userRegister } from '../../redux/actions'
 
 class RegisterPage extends Component{
   getNameText(ref){

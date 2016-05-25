@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 
 import { connect } from 'react-redux'
-import { userLogin } from '../redux/actions'
+import { userLogin } from '../../redux/actions'
 
 class LoginPage extends Component{
   getEmailText(ref){
