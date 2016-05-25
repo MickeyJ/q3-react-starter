@@ -1,10 +1,12 @@
 import React from 'react'
 
 import { phrases, words }from '../data/default'
-import {setVoice, sayMessage} from '../helpers/say_message';
+import { setVoice, sayMessage } from '../helpers/say_message';
 
-export default class QuickSpeechPage extends React.Component{
-  sayIt(text){
+class QuickSpeechPage extends React.Component{
+  sayIt(e, text){
+    e.persist();
+    console.log(e);
     const msg = new window.SpeechSynthesisUtterance();
     setVoice(msg, 'Lee');
     sayMessage(msg, text);
@@ -12,19 +14,34 @@ export default class QuickSpeechPage extends React.Component{
   render(){
     return(
       <div className='quick-speech'>
+        
         <div className='col-xs-6'>
           <h3 className='text-center'>Words</h3>
           {words.map((x, i) =>(
-            <span className='btn quick-speech-button' key={i} onClick={() => this.sayIt(x)}>{x}</span>
+            <span 
+              key={i} 
+              onClick={(e) => this.sayIt(e, x)}
+              className='btn quick-speech-button'>
+              {x}
+            </span>
           ))}
         </div>
+        
         <div className='col-xs-6'>
           <h3 className='text-center'>Phrases</h3>
           {phrases.map((x, i) =>(
-            <span className='btn quick-speech-button' key={i} onClick={() => this.sayIt(x)}>{x}</span>
+            <span 
+              key={i} 
+              onClick={(e) => this.sayIt(e, x)}
+              className='btn quick-speech-button'>
+              {x}
+            </span>
           ))}
         </div>
+        
       </div>
     )
   }
 }
+
+export default QuickSpeechPage

@@ -2,7 +2,9 @@ import React, { Component } from 'react'
 
 import {setVoice, sayMessage} from '../helpers/say_message'
 
-const { SpeechSynthesisUtterance } = window;
+const { SpeechSynthesisUtterance, speechSynthesis } = window;
+
+const voices = speechSynthesis.getVoices();
 
 class SpeakBox extends Component {
   getInputText(ref){
@@ -11,13 +13,17 @@ class SpeakBox extends Component {
   sayIt(e){
     e.preventDefault();
     const msg = new SpeechSynthesisUtterance();
-    setVoice(msg, '');
+
+    setVoice(msg, 'Diego');
     sayMessage(msg, this.message.value);
     this.message.value = null;
   }
   render(){
     return (
       <div>
+        {voices.map((x, i) =>{
+          console.log(x);
+        })}
         <form className="form-inline" onSubmit={this.sayIt.bind(this)}>
           <input
             type="text"
