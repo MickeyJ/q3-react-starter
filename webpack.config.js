@@ -11,7 +11,7 @@ const config = {
       index: '/index.html'
     }
   },
-  devtools: 'source-map',
+  devtool: 'source-map',
   module: {
     loaders: [
       {
