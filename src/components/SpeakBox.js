@@ -13,7 +13,7 @@ class SpeakBox extends Component {
   sayIt(e){
     e.preventDefault();
     const msg = new SpeechSynthesisUtterance();
-    setVoice(msg, 'Google polski');
+    setVoice(msg, 'Zosia');
     sayMessage(msg, this.message.value);
     this.message.value = null;
   }

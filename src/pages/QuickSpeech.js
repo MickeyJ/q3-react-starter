@@ -8,7 +8,7 @@ class QuickSpeechPage extends React.Component{
     e.persist();
     console.log(e);
     const msg = new window.SpeechSynthesisUtterance();
-    setVoice(msg, 'Lee');
+    setVoice(msg, 'Carlos');
     sayMessage(msg, text);
   }
   render(){
