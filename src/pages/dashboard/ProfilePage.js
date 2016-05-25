@@ -8,7 +8,7 @@ const ProfilePage = () => (
 
   <div>
     <h1 className="text-center">Profile Page</h1>
-    <SpeakBox />
+
   </div>
 );
 export default ProfilePage

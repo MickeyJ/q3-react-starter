@@ -15,7 +15,7 @@ class MyPhrasesPage extends React.Component{
     return(
       <div>
         <h1 className="text-center">My Phrases</h1>
-        <SpeakBox />
+
       </div>
     )
   }
