@@ -13,11 +13,7 @@ import './style/main.scss'
 
 const storeWithMiddleware = applyMiddleware(
   logger(), promise
-<<<<<<< HEAD
-)(createStore)
-=======
 )(createStore);
->>>>>>> 3f2dd32febf142b6e4044f246210f745f5e8e609
 
 import Routes from './routes'
 
