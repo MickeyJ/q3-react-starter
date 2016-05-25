@@ -4,6 +4,7 @@ import { connect } from 'react-redux'
 
 import JWT from '../helpers/jwt_helper'
 
+
 class Layout extends Component{
   handleLogout(){
     JWT.destroy();
@@ -52,9 +53,9 @@ class Layout extends Component{
   }
 }
 
-
 function mapStateToProps(state) {
   return {user: state.user.cred}
 }
 
 export default connect(mapStateToProps)(Layout);
+
