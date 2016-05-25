@@ -1,4 +1,3 @@
-
 const { speechSynthesis } = window;
 
 export function getVoices(){

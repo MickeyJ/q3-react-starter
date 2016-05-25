@@ -7,6 +7,7 @@ import AboutPage from './pages/AboutPage'
 import RegisterPage from './pages/RegisterPage'
 import LoginPage from './pages/LoginPage'
 import QuickSpeechPage from './pages/QuickSpeech'
+import Dashboard from './pages/Dashboard'
 
 const Routes = () =>(
   <Router history={browserHistory}>
@@ -16,6 +17,7 @@ const Routes = () =>(
       <Route path="/login" component={LoginPage}/>
       <Route path="/about" component={AboutPage}/>
       <Route path="/quick" component={QuickSpeechPage}/>
+      <Route path='/dashboard' component={Dashboard}/>
     </Route>
   </Router>
 );

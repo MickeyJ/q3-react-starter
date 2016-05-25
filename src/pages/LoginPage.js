@@ -12,9 +12,9 @@ class LoginPage extends Component{
   }
   handleSubmit(e){
     e.preventDefault();
-    let email = this.email.value, 
-        password = this.password.value;
-    if(!password || !email) return;
+    let email = this.email.value,
+        password = this.password.value
+    if (!password || !email) return;
     return this.props.userLogin({email, password});
   }
   render() {
@@ -39,7 +39,7 @@ class LoginPage extends Component{
   }
 }
 
-function mapStateToProps(state){
+function mapStateToProps(state) {
   return {user: state.user.cred}
 }
 
