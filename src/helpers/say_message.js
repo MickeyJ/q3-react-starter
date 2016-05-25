@@ -19,7 +19,6 @@ export function setVoice(msg, voice){
   let newVoice = voices.find((x) =>{
     return x.name == voice
   });
-
   msg.lang = newVoice.lang;
   msg.voice = newVoice;
   msg.voiceURI = newVoice.voiceURI;
