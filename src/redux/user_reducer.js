@@ -21,7 +21,6 @@ export default function(state = INITIAL_STATE, action) {
         cred: action.payload.data.user
       };
     case IS_AUTHED:
-      JWT.save(action.payload.data);
       return { ...state,
         cred: action.payload.data.user
       };

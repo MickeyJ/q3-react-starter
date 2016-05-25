@@ -6,7 +6,7 @@ class JWT {
     localStorage.setItem("token", data.token);
   }
   static fetch(){
-    return localStorage.getItem("token");
+    return localStorage.getItem("token")
   }
   static destroy(){
     localStorage.clear("token");
@@ -14,4 +14,3 @@ class JWT {
 }
 
 export default JWT
-
