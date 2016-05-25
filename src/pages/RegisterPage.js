@@ -16,24 +16,14 @@ class RegisterPage extends Component{
   handleSubmit(e){
     e.preventDefault();
     let name = this.name.value,
-<<<<<<< HEAD
         email = this.email.value,
         password = this.password.value
-    if (!password || !email) return;
+    if (!password || !email || !name) return;
     this.name.value = null;
     this.email.value = null;
     this.password.value = null;
     return this.props.userRegister({name, email, password});
 
-=======
-      email = this.email.value,
-      password = this.password.value;
-    if(!password || !email || ! name) return;
-    this.name.value = null;
-    this.email.value = null;
-    this.password.value = null;
-    return this.props.userRegister({name , email, password});
->>>>>>> 3f2dd32febf142b6e4044f246210f745f5e8e609
   }
   render(){
     return(
@@ -63,13 +53,8 @@ class RegisterPage extends Component{
   }
 }
 
-<<<<<<< HEAD
 function mapStateToProps(state) {
   return {user: state.user.cred}
-=======
-function mapStateToProps(state){
-  return { user: state.user.cred}
->>>>>>> 3f2dd32febf142b6e4044f246210f745f5e8e609
 }
 
 export default connect(mapStateToProps, {
