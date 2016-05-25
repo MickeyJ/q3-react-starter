@@ -26,18 +26,18 @@ class RegisterPage extends Component{
   }
   render(){
     return(
-      <form onSubmit={this.handleSubmit.bind(this)}>
+      <form className="col-md-6 col-md-offset-3 register" onSubmit={this.handleSubmit.bind(this)}>
         <h1>{this.props.user.name}</h1>
         <input
         type="text"
         placeholder="Name"
-        className="form-control"
+        className="form-control register"
         ref={(ref) => this.getNameText(ref)}
         />
         <input
           type="text"
           placeholder="Email"
-          className="form-control"
+          className="form-control register"
           ref={(ref) => this.getEmailText(ref)}
         />
         <input
@@ -46,7 +46,7 @@ class RegisterPage extends Component{
           className="form-control"
           ref={(ref) => this.getPassText(ref)}
         />
-        <input className="btn btn-success" type="submit" value="Log In"/>
+        <input className="btn btn-success register" type="submit" value="Sign Up"/>
       </form>
     )
   }
