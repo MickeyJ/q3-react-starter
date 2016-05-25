@@ -1,4 +1,6 @@
 import React, { Component } from 'react'
+import axios from 'axios'
+import JWT from '../helpers/jwt_helper.js'
 
 class RegisterPage extends Component{
   getNameText(ref){
@@ -12,9 +14,21 @@ class RegisterPage extends Component{
   }
   handleSubmit(e){
     e.preventDefault();
-    console.log(this.name.value);
-    console.log(this.email.value);
-    console.log(this.password.value);
+    // console.log(this.name.value);
+    // console.log(this.email.value);
+    // console.log(this.password.value);
+      axios.post('http://localhost:3000/api/v1/signup', {
+          name: this.name.value,
+          email: this.email.value,
+          password: this.password.value
+      })
+          .then(function (response) {
+              JWT.save(response.data);
+          })
+          .catch(function (response) {
+              console.log("catch blocked.. " + response.data);
+          });
+
   }
   render(){
     return(
