@@ -46,7 +46,7 @@ class RegisterPage extends Component{
           className="form-control"
           ref={(ref) => this.getPassText(ref)}
         />
-        <input className="btn btn-success" type="submit" value="Sign Up"/>
+        <input className="btn btn-success" type="submit" value="Log In"/>
       </form>
     )
   }
