@@ -27,11 +27,7 @@ const Routes = () =>(
         <Route path="/profile" component={ProfilePage}/>
         <Route path="/quick" component={QuickSpeechPage}/>
         <Route path="/phrases" component={MyPhrasesPage}/>
-<<<<<<< HEAD
         <Route path="/constructor" component={ConstructorPage}/>
-=======
-        
->>>>>>> bdb936008e975bb479a18e5c3b5a194b487862cc
       </Route>
     </Route>
   </Router>
