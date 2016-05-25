@@ -16,13 +16,13 @@ class RegisterPage extends Component{
   handleSubmit(e){
     e.preventDefault();
     let name = this.name.value,
-      email = this.email.value,
-      password = this.password.value;
+        email = this.email.value,
+        password = this.password.value;
     if(!password || !email || ! name) return;
     this.name.value = null;
     this.email.value = null;
     this.password.value = null;
-    return this.props.userRegister({name , email, password});
+    return this.props.userRegister({name, email, password});
   }
   render(){
     return(
