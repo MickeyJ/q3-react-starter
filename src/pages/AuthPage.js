@@ -1,6 +1,9 @@
 import React, { Component } from 'react'
 
 class AuthPage extends Component{
+  constructor(){
+    super();
+  }
   getNameText(ref){
     this.name = ref
   }
@@ -10,11 +13,19 @@ class AuthPage extends Component{
   getPassText(ref){
     this.password = ref
   }
+  componentWillUnmount(){
+      console.log('Unmounting');
+  };
   handleSubmit(e){
     e.preventDefault();
+      if(this.name.value) {
     console.log(this.name.value);
     console.log(this.email.value);
     console.log(this.password.value);
+      } else {
+          console.log(this.email.value);
+          console.log(this.password.value);
+      }
   }
   render(){
     if(this.props.route.path === '/register'){
@@ -38,15 +49,29 @@ class AuthPage extends Component{
             className="form-control"
             ref={(ref) => this.getPassText(ref)}
           />
-          <input className="btn btn-success" type="submit" value="Sign Up"/>
+          <input className="btn btn-success"
+                 type="submit"
+                 value="Sign Up"
+          />
         </form>
       )
     } else {
       return(
         <form onSubmit={this.handleSubmit.bind(this)}>
-          <input className="form-control" type="text" placeholder="Email" ref={(ref) => this.getEmailText(ref)}/>
-          <input className="form-control" type="password" placeholder="Password" ref={(ref) => this.getPassText(ref)}/>
-          <input className="btn btn-success" type="submit" value="Login"/>
+          <input className="form-control"
+                 type="text"
+                 placeholder="Email"
+                 ref={(ref) => this.getEmailText(ref)}
+          />
+          <input className="form-control"
+                 type="password"
+                 placeholder="Password"
+                 ref={(ref) => this.getPassText(ref)}
+          />
+          <input className="btn btn-success"
+                 type="submit"
+                 value="Login"
+          />
         </form>
       )
     }
