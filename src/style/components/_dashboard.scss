@@ -1,6 +1,17 @@
-div.dashboard {
-  float: none;
-  margin: 15% 7%;
+#dashboard {
+  margin: 5% 2%;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  align-items: center;
+}
+
+.dash-box{
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
 }
 
 span.glyphicon {

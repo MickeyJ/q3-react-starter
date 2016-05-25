@@ -8,7 +8,8 @@ import HomePage from './pages/HomePage'
 import AboutPage from './pages/AboutPage'
 import RegisterPage from './pages/auth/RegisterPage'
 import LoginPage from './pages/auth/LoginPage'
-import Dashboard from './pages/dashboard/Dashboard'
+import Dashboard from './pages/Dashboard'
+import DashIndex from './pages/dashboard/DashIndex'
 import ProfilePage from './pages/dashboard/ProfilePage'
 import QuickSpeechPage from './pages/dashboard/QuickSpeech'
 import MyPhrasesPage from './pages/dashboard/MyPhrases'
@@ -20,10 +21,13 @@ const Routes = () =>(
       <Route path="/register" component={RegisterPage}/>
       <Route path="/login" component={LoginPage}/>
       <Route path="/about" component={AboutPage}/>
-      <Route path='/dashboard' component={Dashboard}/>
-      <Route path="/profile" component={ProfilePage}/>
-      <Route path="/quick" component={QuickSpeechPage}/>
-      <Route path="/phrases" component={MyPhrasesPage}/>
+      <Route path='/dashboard' component={Dashboard}>
+        <IndexRoute component={DashIndex}/>
+        <Route path="/profile" component={ProfilePage}/>
+        <Route path="/quick" component={QuickSpeechPage}/>
+        <Route path="/phrases" component={MyPhrasesPage}/>
+        
+      </Route>
     </Route>
   </Router>
 );

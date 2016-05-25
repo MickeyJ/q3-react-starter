@@ -5,6 +5,10 @@
 @import 'components/login';
 @import 'components/register';
 
+.speak-box{
+  clear: both;
+}
+
 .speak-input{
   height: 50px;
   width: 40vw !important;
