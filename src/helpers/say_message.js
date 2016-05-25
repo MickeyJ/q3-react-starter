@@ -14,6 +14,7 @@ function getVoices(){
 getVoices();
 
 export function setVoice(msg, voice){
+  
   const voices = speechSynthesis.getVoices();
   let newVoice = voices.find((x) =>{
     return x.name == voice
