@@ -1,7 +1,10 @@
 import React from 'react'
 import { Link } from 'react-router'
 
+import JWT from '../helpers/jwt_helper'
+
 const Layout = (props) => (
+
   <div className="container-fluid">
 
     <Link to="/">Home</Link>
@@ -15,6 +18,8 @@ const Layout = (props) => (
     <Link to="/quick">Quick Speak</Link>
     <span> | </span>
     <Link to="/dashboard">Dashboard</Link>
+    <span> | </span>
+    <Link to="/" onClick={JWT.destroy()}>Logout</Link>
 
     <main>
       {props.children}

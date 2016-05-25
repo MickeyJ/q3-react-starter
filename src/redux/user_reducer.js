@@ -5,23 +5,19 @@ import {
   SIGN_UP,
 } from './actions'
 
-const INITIAL_STATE = { cred: {}, token: ''};
+const INITIAL_STATE = { cred: {} };
 
 export default function(state = INITIAL_STATE, action) {
-
-  switch(action.type) {
-
+  switch(action.type){
     case SIGN_UP:
       JWT.save(action.payload.data);
       return {...state,
-        cred: action.payload.data.user,
-        token: action.payload.data.token
+        cred: action.payload.data.user
       };
     case LOG_IN:
       JWT.save(action.payload.data);
       return { ...state,
-        cred: action.payload.data.user,
-        token: action.payload.data.token
+        cred: action.payload.data.user
       };
     default:
       return state

@@ -1,10 +1,14 @@
-class JWT {
-    save (data) {
-        // console.log(data);
-        // console.log(data.name);
-        window.localStorage.setItem("token", data.token);
-        // window.localStorage.getItem(token);
+const { localStorage } = window;
 
-    }
+class JWT {
+  static save(data) {
+    localStorage.setItem("token", data.token);
+  }
+  static fetch(){
+    return localStorage.getItem("token");
+  }
+  static destroy(){
+    localStorage.clear("token");
+  }
 }
-export default new JWT
+export default JWT

@@ -13,7 +13,7 @@ class LoginPage extends Component{
   handleSubmit(e){
     e.preventDefault();
     let email = this.email.value,
-        password = this.password.value
+        password = this.password.value;
     if (!password || !email) return;
     return this.props.userLogin({email, password});
   }

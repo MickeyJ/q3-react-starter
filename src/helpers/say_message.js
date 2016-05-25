@@ -11,9 +11,7 @@ getVoices();
 
 export function setVoice(msg, voice){
   const voices = speechSynthesis.getVoices();
-  msg.voice = voices.find((x) =>{
-    return x.name == voice
-  });
+  msg.voice = voices.find((x) => x.name == voice);
   msg.volume = 1;
   msg.pitch = 1;
   msg.rate = 1;
