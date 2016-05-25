@@ -1,6 +1,9 @@
 @import 'commons/base';
 @import 'commons/nav';
 @import 'components/quickspeech';
+@import 'components/dashboard';
+@import 'components/login';
+@import 'components/register';
 
 .speak-input{
   height: 50px;

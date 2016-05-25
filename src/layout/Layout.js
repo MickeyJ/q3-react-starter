@@ -15,6 +15,9 @@ const Layout = (props) => (
     <Link to="/quick">Quick Speak</Link>
     <span> | </span>
     <Link to="/dashboard">Dashboard</Link>
+    <span> | </span>
+    <Link to="/profile">Profile</Link>
+
 
     <main>
       {props.children}
