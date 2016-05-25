@@ -8,37 +8,37 @@ class QuickSpeechPage extends React.Component{
     e.persist();
     console.log(e);
     const msg = new window.SpeechSynthesisUtterance();
-    setVoice(msg, 'Lee');
+    setVoice(msg, 'Magnus');
     sayMessage(msg, text);
   }
   render(){
     return(
       <div className='quick-speech'>
-        
+
         <div className='col-xs-6'>
           <h3 className='text-center'>Words</h3>
           {words.map((x, i) =>(
-            <span 
-              key={i} 
+            <span
+              key={i}
               onClick={(e) => this.sayIt(e, x)}
               className='btn quick-speech-button'>
               {x}
             </span>
           ))}
         </div>
-        
+
         <div className='col-xs-6'>
           <h3 className='text-center'>Phrases</h3>
           {phrases.map((x, i) =>(
-            <span 
-              key={i} 
+            <span
+              key={i}
               onClick={(e) => this.sayIt(e, x)}
               className='btn quick-speech-button'>
               {x}
             </span>
           ))}
         </div>
-        
+
       </div>
     )
   }
