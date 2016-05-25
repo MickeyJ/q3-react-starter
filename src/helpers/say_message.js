@@ -1,14 +1,14 @@
 
 const { speechSynthesis } = window;
 
-// export function getVoices(){
-//   speechSynthesis.onvoiceschanged = function() {
-//     speechSynthesis.getVoices().map((voice) =>{
-//       console.log(voice.name);
-//     });
-//   };
-// }
-// getVoices();
+export function getVoices(){
+  speechSynthesis.onvoiceschanged = function() {
+    speechSynthesis.getVoices().map((voice) =>{
+      console.log(voice.name);
+    });
+  };
+}
+getVoices();
 
 export function setVoice(msg, voice){
   const voices = speechSynthesis.getVoices();

@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
-import axios from 'axios'
-import JWT from '../helpers/jwt_helper.js'
+
+import { connect } from 'react-redux'
+import { userRegister } from '../redux/actions'
 
 class RegisterPage extends Component{
   getNameText(ref){
@@ -14,25 +15,19 @@ class RegisterPage extends Component{
   }
   handleSubmit(e){
     e.preventDefault();
-    // console.log(this.name.value);
-    // console.log(this.email.value);
-    // console.log(this.password.value);
-      axios.post('http://localhost:3000/api/v1/signup', {
-          name: this.name.value,
-          email: this.email.value,
-          password: this.password.value
-      })
-          .then(function (response) {
-              JWT.save(response.data);
-          })
-          .catch(function (response) {
-              console.log("catch blocked.. " + response.data);
-          });
-
+    let name = this.name.value,
+      email = this.email.value,
+      password = this.password.value;
+    if(!password || !email || ! name) return;
+    this.name.value = null;
+    this.email.value = null;
+    this.password.value = null;
+    return this.props.userRegister({name , email, password});
   }
   render(){
     return(
       <form onSubmit={this.handleSubmit.bind(this)}>
+        <h1>{this.props.user.name}</h1>
         <input
           type="text"
           placeholder="Name"
@@ -57,4 +52,10 @@ class RegisterPage extends Component{
   }
 }
 
-export default RegisterPage
+function mapStateToProps(state){
+  return { user: state.user.cred}
+}
+
+export default connect(mapStateToProps, {
+  userRegister
+})(RegisterPage);
