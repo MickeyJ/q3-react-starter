@@ -19,7 +19,12 @@ const Layout = (props) => (
     <span> | </span>
     <Link to="/dashboard">Dashboard</Link>
     <span> | </span>
+    <Link to="/profile">Profile</Link>
+    <span> | </span>
     <Link to="/" onClick={JWT.destroy()}>Logout</Link>
+
+
+
 
     <main>
       {props.children}

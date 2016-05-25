@@ -1,3 +1,4 @@
+
 const { localStorage } = window;
 
 class JWT {
@@ -11,4 +12,6 @@ class JWT {
     localStorage.clear("token");
   }
 }
+
 export default JWT
+

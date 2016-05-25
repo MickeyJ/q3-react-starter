@@ -19,18 +19,18 @@ class LoginPage extends Component{
   }
   render() {
     return (
-      <form onSubmit={this.handleSubmit.bind(this)}>
+      <form className="col-md-6 col-md-offset-3 login" onSubmit={this.handleSubmit.bind(this)}>
         <h1>{this.props.user.name}</h1>
         <input
           type="text"
           placeholder="Email"
-          className="form-control"
+          className="form-control login"
           ref={(ref) => this.getEmailText(ref)}
         />
         <input
           type="password"
           placeholder="Password"
-          className="form-control"
+          className="form-control login"
           ref={(ref) => this.getPassText(ref)}
         />
         <input className="btn btn-success" type="submit" value="Log In"/>
