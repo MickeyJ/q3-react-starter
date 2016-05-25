@@ -11,4 +11,9 @@ nav {
   color: white;
   background: CadetBlue;
   border-radius: 5px 80px 5px 5px;
+  text-decoration: none;
+  &:hover {
+    text-decoration: none;
+    color: rgba(0, 0, 0, 0.74)
+  }
 }
