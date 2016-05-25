@@ -12,15 +12,15 @@ class LoginPage extends Component{
   }
   handleSubmit(e){
     e.preventDefault();
-    console.log(this.email.value);
-    console.log(this.password.value);
+    // console.log(this.email.value);
+    // console.log(this.password.value);
       axios.post('http://localhost:3000/api/v1/login', {
           email: this.email.value,
           password: this.password.value
       })
           .then(function (response) {
-              console.log("yay", response.data.token);
-              JWT.save(response.data.token);
+              // console.log("yay", response.data.token);
+              JWT.save(response.data);
           })
           .catch(function (response) {
               console.log("catch blocked.. " + response);
