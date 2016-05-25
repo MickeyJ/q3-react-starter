@@ -6,9 +6,8 @@ import { setVoice, sayMessage } from '../helpers/say_message';
 class QuickSpeechPage extends React.Component{
   sayIt(e, text){
     e.persist();
-    console.log(e);
     const msg = new window.SpeechSynthesisUtterance();
-    setVoice(msg, 'Magnus');
+    setVoice(msg, 'Alex');
     sayMessage(msg, text);
   }
   render(){

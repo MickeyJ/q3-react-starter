@@ -14,11 +14,13 @@ export default function(state = INITIAL_STATE, action){
       JWT.save(action.payload.data);
       return {...state,
         cred: action.payload.data.user,
+        token: action.payload.data.token
       };
     case LOG_IN:
       JWT.save(action.payload.data);
       return { ...state,
         cred: action.payload.data.user,
+        token: action.payload.data.token
       };
     default:
       return state

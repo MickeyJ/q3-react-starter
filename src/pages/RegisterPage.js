@@ -27,11 +27,12 @@ class RegisterPage extends Component{
   render(){
     return(
       <form onSubmit={this.handleSubmit.bind(this)}>
-      <input
-        type="text"
-        placeholder="Name"
-        className="form-control"
-        ref={(ref) => this.getNameText(ref)}
+        <h1>{this.props.user.name}</h1>
+        <input
+          type="text"
+          placeholder="Name"
+          className="form-control"
+          ref={(ref) => this.getNameText(ref)}
         />
         <input
           type="text"
