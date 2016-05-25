@@ -15,24 +15,24 @@ class RegisterPage extends Component{
   }
   handleSubmit(e){
     e.preventDefault();
-      let name = this.name.value,
-          email= this.email.value,
-          password= this.password.value;
-      if(!password || !email || !name) return;
-      this.name.value = null;
-      this.email.value = null;
-      this.password.value = null;
-      return this.props.userRegister({name, email, password});
+    let name = this.name.value,
+        email = this.email.value,
+        password = this.password.value;
+    if(!password || !email || !name) return;
+    this.name.value = null;
+    this.email.value = null;
+    this.password.value = null;
+    return this.props.userRegister({name, email, password});
   }
   render(){
     return(
       <form onSubmit={this.handleSubmit.bind(this)}>
         <h1>{this.props.user.name}</h1>
         <input
-          type="text"
-          placeholder="Name"
-          className="form-control"
-          ref={(ref) => this.getNameText(ref)}
+        type="text"
+        placeholder="Name"
+        className="form-control"
+        ref={(ref) => this.getNameText(ref)}
         />
         <input
           type="text"
@@ -52,7 +52,7 @@ class RegisterPage extends Component{
   }
 }
 
-function mapStateToProps(state){
+function mapStateToProps(state) {
   return {user: state.user.cred}
 }
 

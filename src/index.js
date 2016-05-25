@@ -9,6 +9,7 @@ import promise from 'redux-promise'
 
 import reducers from './redux/reducers'
 
+import 'bootstrap/dist/css/bootstrap.css'
 import './style/main.scss'
 
 const storeWithMiddleware = applyMiddleware(
