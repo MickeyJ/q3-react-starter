@@ -23,9 +23,9 @@ class ConstructorPage extends Component{
       textCue: this.cue
     });
   }
-  removeFromCue(text){
-    this.cue = this.state.textCue.filter((x) =>(
-      x !== text
+  removeFromCue(index){
+    this.cue = this.state.textCue.filter((x, i) =>(
+      i !== index
     ));
     this.setState({
       textCue: this.cue
@@ -47,7 +47,12 @@ class ConstructorPage extends Component{
         <section id="text-cue-box">
           <article id="text-cue-input">
             {this.state.textCue.map((x, i) =>(
-              <span className="btn btn-primary word-to-cue" onClick={() => this.removeFromCue(x)} key={i}>{x}</span>
+              <span
+                key={i}
+                onClick={() => this.removeFromCue(i)}
+                className="btn btn-primary word-to-cue" >
+                {x}
+              </span>
             ))}
           </article>
           <button onClick={this.sayIt.bind(this)}>
@@ -69,20 +74,23 @@ class ConstructorPage extends Component{
           </div>
         </section>
 
-        <form className="form-inline" onSubmit={(e) =>this.addToCue(e, this.inputText.value)}>
-          <input
-            type="text"
-            defaultValue="Hello"
-            className="form-control speak-input"
-            placeholder="What else to say?"
-            ref={(ref) => this.getInputText(ref)}
-          />
-          <button
-            type="submit"
-            className="btn btn-info"
-            onClick={(e) =>this.addToCue(e, this.inputText.value)}
-          >Add To Cue</button>
-        </form>
+        <div className='col-xs-6'>
+          <h3 className='text-center'>Categories?</h3>
+          <form className="form-inline" onSubmit={(e) =>this.addToCue(e, this.inputText.value)}>
+            <input
+              type="text"
+              className="form-control speak-input"
+              placeholder="Add To Cue"
+              ref={(ref) => this.getInputText(ref)}
+            />
+            <button
+              type="submit"
+              className="btn btn-info"
+              onClick={(e) =>this.addToCue(e, this.inputText.value)}
+            >Add To Cue</button>
+          </form>
+        </div>
+
 
       </div>
     )
