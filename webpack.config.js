@@ -16,7 +16,8 @@ const config = {
   devtool: DEV ? 'source-map' : null,
   plugins: [
     new webpack.optimize.OccurenceOrderPlugin(),
-    new webpack.EnvironmentPlugin(["NODE_ENV"])
+    new webpack.EnvironmentPlugin(["NODE_ENV"]),
+    new webpack.NoErrorsPlugin()
   ],
   module: {
     loaders: [
@@ -57,10 +58,6 @@ if(!DEV){
     })
   );
 } else {
-  config.plugins.push(
-    // new webpack.HotModuleReplacementPlugin(),
-    new webpack.NoErrorsPlugin()
-  );
   config.module.loaders[0].query.presets.push('react-hmre')
 }
 

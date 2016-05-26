@@ -38,9 +38,9 @@ const Routes = () =>(
         <Route path="/constructor" component={ConstructorPage}/>
       </Route>
 
+      <Route path="*" component={NotFound} />
+      
     </Route>
-
-    <Route path="*" component={NotFound} />
   </Router>
 );
 

@@ -5,7 +5,7 @@ export const IS_AUTHED = 'IS_AUTHED';
 export const SIGN_UP = 'SIGN_UP';
 export const LOG_IN = 'LOG_IN';
 
-const API = 'http://localhost:3000/api/v1';
+const API = '/api/v1';
 
 export function verifyUser(){
   const request = axios({
