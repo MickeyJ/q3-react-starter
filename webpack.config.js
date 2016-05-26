@@ -1,3 +1,5 @@
+const webpack = require('webpack');
+const DEV = process.env.NODE_ENV==='development';
 
 const config = {
   entry: './src',
@@ -11,7 +13,11 @@ const config = {
       index: '/index.html'
     }
   },
-  devtool: 'source-map',
+  devtool: DEV ? 'source-map' : null,
+  plugins: [
+    new webpack.optimize.OccurenceOrderPlugin(),
+    new webpack.EnvironmentPlugin(["NODE_ENV"])
+  ],
   module: {
     loaders: [
       {
@@ -37,6 +43,25 @@ const config = {
       {test: /\.svg(\?v=\d+\.\d+\.\d+)?$/, loader: 'url?limit=10000&mimetype=image/svg+xml'}
     ]
   }
+}
+
+if(!DEV){
+  config.plugins.push(
+    new webpack.optimize.UglifyJsPlugin({
+      minimize: true,
+      mangle: false,
+      compressor: {
+        drop_console: true,
+        warnings: true
+      }
+    })
+  );
+} else {
+  config.plugins.push(
+    // new webpack.HotModuleReplacementPlugin(),
+    new webpack.NoErrorsPlugin()
+  );
+  config.module.loaders[0].query.presets.push('react-hmre')
 }
 
 module.exports = config;

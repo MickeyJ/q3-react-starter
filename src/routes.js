@@ -39,6 +39,7 @@ const Routes = () =>(
       </Route>
 
     </Route>
+
     <Route path="*" component={NotFound} />
   </Router>
 );

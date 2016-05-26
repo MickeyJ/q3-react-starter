@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import JWT from '../../helpers/jwt_helper.js'
+
 import { connect } from 'react-redux'
 import { userRegister } from '../../redux/actions'
 
@@ -31,7 +32,7 @@ class RegisterPage extends Component{
         password = this.password.value;
     if(!password || !email || !name) {
       this.setState({
-        error: 'yo shit wrong'
+        error: 'yo shit wro'
       });
       return false;
     }
@@ -40,6 +41,7 @@ class RegisterPage extends Component{
         .then(res =>{
           if(res.payload.data.user){
               JWT.save(res.payload.data)
+
             this.context.router.go('/dashboard');
           } else {
             console.log(res.payload.data.error);
