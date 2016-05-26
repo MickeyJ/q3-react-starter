@@ -16,7 +16,7 @@ const InputToCue = props => (
       <button
         type="submit"
         className="btn btn-info">
-        Add To Cue
+        Add To Queue
       </button>
     </form>
   </div>

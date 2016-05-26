@@ -1,13 +1,15 @@
 #text-cue-box{
   position: relative;
   width: 100%;
-  height: 200px;
+  height: 125px;
   border: 1px solid black;
   border-radius: 10px;
   background: white;
+  overflow: auto;
 
   #text-cue-input{
     float: left;
+
   }
 
   button{
@@ -16,13 +18,13 @@
 
   #say-cue-btn{
     height: 40px;
-    position: absolute;
+    position: fixed;
     right: 0;
     top: 0;
   }
 
   #clear-cue-btn{
-    position: absolute;
+    position: fixed;
     height: 40px;
     top: 40px;
     right: 0;
@@ -50,6 +52,9 @@
 }
 
 .add-text-form{
+  position: absolute;
+  right: -60%;
+  transition: all 0.1s;
 
   input{
     height: 56px;
@@ -59,5 +64,9 @@
   }
   button{
     font-size: 1.5em;
+  }
+
+  &:hover{
+    right: 0;
   }
 }

@@ -1,8 +1,6 @@
 import React from 'react'
-
-import { phrases, words }from '../../data/default'
+import ErrorBox from '../../components/ErrorBox'
 import { setVoice, sayMessage } from '../../helpers/say_message';
-import SpeakBox from '../../components/SpeakBox';
 
 class MyPhrasesPage extends React.Component{
   sayIt(e, text){
@@ -11,34 +9,30 @@ class MyPhrasesPage extends React.Component{
     setVoice(msg, 'Bad News');
     sayMessage(msg, text);
   }
-
-  getUserId(ref){
-    this.id = ref
-  }
   getPhraseText(ref){
     this.phrase = ref
   }
-  onInputChange(e){
+  onInputChange(e) {
     // console.log(this.email.value);
   }
   handleSubmit(e){
     e.preventDefault();
-    let user_id = this.id.value,
-        phrase = this.phrase.value
-    if(!user_id || !phrase) {
+    let phrase = this.phrase.value;
+    if(!phrase) {
       this.setState({
-        error: 'yo shit fucked'
+        error: 'no content'
       });
       return false;
     }
     return (
-        this.props.phrasePush({user_id, phrase})
+        this.props.addPhrase(phrase)
             .then(res =>{
+              console.log(phrase);
               if(res.payload.data){
                 console.log(res.payload.data)
               } else {
                 this.setState({
-                  error: res.payload.data.error
+                  error: res.payload.data
                 });
               }
             })
@@ -50,13 +44,7 @@ class MyPhrasesPage extends React.Component{
         <h1 className="text-center">My Phrases</h1>
         <form className="col-md-6 col-md-offset-3 auth-form" onSubmit={this.handleSubmit.bind(this)}>
           <h2>Add Up</h2>
-          <ErrorBox error={this.state.error}/>
-          <input
-              type="hidden"
-              className="form-control register"
-              value={JWT.fetch()}
-              ref={(ref) => this.getUserId(ref)}
-          />
+          <ErrorBox error={this.state}/>
           <input
               type="text"
               placeholder="phrase it"
@@ -64,8 +52,20 @@ class MyPhrasesPage extends React.Component{
               ref={(ref) => this.getPhraseText(ref)}
               onChange={(e) => this.onInputChange(e)}
           />
-          <button className="btn btn-success" type="submit">Sign Up</button>
+          <button className="btn btn-success" type="submit">Add Phrase</button>
         </form>
+
+        <div className="col-xs-6">
+          {this.props.phrases.map((x, i) =>(
+            <div>
+              <h3 className="phrase-text" key={i}>{x.name}</h3>
+              {this.props.phrases[0].phrases.map((x, i) =>(
+                <p className="phrase-text" key={i}>{x.phrase}</p>
+              ))}
+            </div>
+          ))}
+        </div>
+
       </div>
     )
   }

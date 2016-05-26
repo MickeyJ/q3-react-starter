@@ -2,12 +2,11 @@ import React, { Component } from 'react'
 
 import { setVoice, sayMessage } from '../../helpers/say_message'
 
-
-const { SpeechSynthesisUtterance, speechSynthesis } = window;
-
 import TextCueBox from '../../components/TextCueBox'
 import WordPhraseBox from '../../components/WordPhraseBox'
 import InputToCue from '../../components/InputToCue'
+
+const { SpeechSynthesisUtterance, speechSynthesis } = window;
 
 class ConstructorPage extends Component{
   constructor(){

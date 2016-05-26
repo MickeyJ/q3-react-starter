@@ -24,7 +24,7 @@ const TextCueBox = props => (
       id="clear-cue-btn"
       className="btn btn-warning"
       onClick={() => props.setCueState( [] )}>
-      Clear Cue
+      Clear Queue
     </button>
 
   </section>
