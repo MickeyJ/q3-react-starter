@@ -3,8 +3,8 @@ import React from 'react'
 import SpeakBox from '../../components/SpeakBox';
 
 const HomeIndex = () =>(
-  <div>
-    <h1>Welcome to Speak Easy</h1>
+  <div className="homeIndex">
+    <h1 className="homeIndex">Welcome to SpeakEasy</h1>
     <SpeakBox />
   </div>
 );

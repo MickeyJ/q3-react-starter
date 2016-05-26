@@ -8,7 +8,7 @@ nav {
 }
 
 .active{
-  color: MediumSeaGreen;
+  color: rgb(52, 254, 181);
 }
 
 .page-link{
@@ -17,7 +17,7 @@ nav {
 
 a{
   &:focus{
-    color: MediumSeaGreen;
+    color: rgb(52, 254, 181);
     text-decoration: none;
   }
 }
