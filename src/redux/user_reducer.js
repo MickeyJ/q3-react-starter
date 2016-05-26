@@ -4,21 +4,25 @@ import {
   IS_AUTHED,
 } from './actions'
 
-const INITIAL_STATE = { cred: {}, error: []};
+const INITIAL_STATE = { cred: {}, token: '', error: {} };
 
 export default function(state = INITIAL_STATE, action) {
   switch(action.type){
     case SIGN_UP:
       return {...state,
-        cred: action.payload.data.user
+        cred: action.payload.data.user,
+        token: action.payload.data.token
       };
     case LOG_IN:
       return { ...state,
-        cred: action.payload.data.user
+        cred: action.payload.data.user,
+        token: action.payload.data.token
       };
     case IS_AUTHED:
       return { ...state,
-        cred: action.payload.data.user
+        ...state.token,
+        cred: action.payload.data.user,
+        error: action.payload.data.message
       };
     default:
       return state

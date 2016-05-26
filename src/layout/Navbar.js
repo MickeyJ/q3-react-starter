@@ -35,6 +35,10 @@ const Navbar = (props) => {
           <span>Profile</span>
         </NavLink>
         <i> | </i>
+        <NavLink to="/phrases">
+          <span>My Phrases</span>
+        </NavLink>
+        <i> | </i>
         <NavLink to="/quick">
           <span>Quick Speech</span>
         </NavLink>

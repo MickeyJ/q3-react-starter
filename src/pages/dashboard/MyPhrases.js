@@ -8,7 +8,7 @@ class MyPhrasesPage extends React.Component{
   sayIt(e, text){
     e.persist();
     const msg = new window.SpeechSynthesisUtterance();
-    setVoice(msg, 'Alex');
+    setVoice(msg, 'Bad News');
     sayMessage(msg, text);
   }
   render(){

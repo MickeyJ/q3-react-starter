@@ -1,6 +1,10 @@
 import React, { Component } from 'react'
 import JWT from '../../helpers/jwt_helper.js'
 
+import { setVoice, sayMessage } from '../../helpers/say_message'
+
+const { SpeechSynthesisUtterance, speechSynthesis } = window;
+
 import { connect } from 'react-redux'
 import { userLogin } from '../../redux/actions'
 
@@ -27,6 +31,9 @@ class LoginPage extends Component{
     let email = this.email.value,
         password = this.password.value;
     if (!password || !email) {
+      const msg = new SpeechSynthesisUtterance();
+      setVoice(msg, 'Samantha');
+      sayMessage(msg, 'yo shit wrong');
       this.setState({
         error: 'yo shit wrong'
       });
@@ -36,9 +43,9 @@ class LoginPage extends Component{
       this.props.userLogin({email, password})
         .then(res =>{
           if(res.payload.data.user){
-              JWT.save(res.payload.data);
-              this.context.router.go('/dashboard');
 
+            JWT.save(res.payload.data);
+            this.context.router.replace('/dashboard');
           } else {
             this.setState({
               error: res.payload.data.error
@@ -49,7 +56,7 @@ class LoginPage extends Component{
   }
   render() {
     return (
-      <form className="col-md-6 col-md-offset-3 login" onSubmit={this.handleSubmit.bind(this)}>
+      <form className="col-md-6 col-md-offset-3 auth-form" onSubmit={this.handleSubmit.bind(this)}>
         <h2>Log In</h2>
         <ErrorBox error={this.state.error}/>
         <input
@@ -66,7 +73,7 @@ class LoginPage extends Component{
           ref={(ref) => this.getPassText(ref)}
           onChange={(e) => this.onInputChange(e)}
         />
-        <input className="btn btn-success" type="submit" value="Log In"/>
+        <button className="btn btn-success" type="submit">Log In</button>
       </form>
     )
   }
@@ -77,7 +84,7 @@ LoginPage.contextTypes = {
 };
 
 const mapStateToProps = (state) =>({
-    error: state.user.error
+    user: state.user.cred
 });
 
 export default connect(mapStateToProps, {

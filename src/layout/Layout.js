@@ -1,5 +1,4 @@
 import React, { Component } from 'react'
-import { Router } from 'react-router'
 import JWT from '../helpers/jwt_helper'
 
 import Navbar from './Navbar'
@@ -7,7 +6,7 @@ import Navbar from './Navbar'
 class Layout extends Component{
   handleLogout(){
     JWT.destroy();
-    Router.transitionTo('/')
+    this.context.router.replace('/');
   }
   render(){
     return(
@@ -24,5 +23,9 @@ class Layout extends Component{
     )
   }
 }
+
+Layout.contextTypes = {
+  router: React.PropTypes.object
+};
 
 export default Layout

@@ -6,13 +6,24 @@ import JWT from '../helpers/jwt_helper'
 import SpeakBox from '../components/SpeakBox';
 
 class Dashboard extends Component{
+  constructor(){
+    super();
+    this.state = {
+      username: ''
+    }
+  }
   componentWillMount(){
     if(!JWT.fetch()){
       this.context.router.replace('/');
     } else {
       return this.props.verifyUser().then(res =>{
-        if(!res.payload.data.user){
+        if(this.props.error === 'invalid token' || res.status === 500){
+          JWT.destroy();
           this.context.router.replace('/');
+        } else {
+          this.setState({
+            username: this.props.user.name
+          });
         }
       })
     }
@@ -20,7 +31,7 @@ class Dashboard extends Component{
   render(){
     return (
       <div >
-        <h1>{this.props.user.name}</h1>
+        <h1>{this.state.username}</h1>
         {this.props.children}
         <SpeakBox />
       </div>
@@ -33,7 +44,10 @@ Dashboard.contextTypes = {
 };
 
 function mapStateToProps(state) {
-  return {user: state.user.cred}
+  return {
+    user: state.user.cred,
+    error: state.user.error
+  }
 }
 
 export default connect(mapStateToProps, {
