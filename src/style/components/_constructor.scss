@@ -11,10 +11,21 @@
   }
 
   button{
+    width: 150px;
+  }
+
+  #say-cue-btn{
+    height: 40px;
     position: absolute;
     right: 0;
     top: 0;
-    float: right;
+  }
+
+  #clear-cue-btn{
+    position: absolute;
+    height: 40px;
+    top: 40px;
+    right: 0;
   }
 
   &:after{
@@ -25,6 +36,28 @@
 
 }
 
+#text-cue-input,
+#word-box{
+  span{
+    font-size: 1.3em;
+    margin-right: 5px;
+    margin-bottom: 5px;
+  }
+}
+
 .word-to-cue{
 
+}
+
+.add-text-form{
+
+  input{
+    height: 56px;
+    font-size: 1.5em;
+    padding: 2% 2%;
+    margin: 2% 0;
+  }
+  button{
+    font-size: 1.5em;
+  }
 }
