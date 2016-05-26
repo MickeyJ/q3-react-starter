@@ -1,4 +1,4 @@
-#text-cue-box{
+#text-Queue-box{
   position: relative;
   width: 100%;
   height: 125px;
@@ -7,7 +7,7 @@
   background: white;
   overflow: auto;
 
-  #text-cue-input{
+  #text-Queue-input{
     float: left;
 
   }
@@ -16,14 +16,14 @@
     width: 150px;
   }
 
-  #say-cue-btn{
+  #say-Queue-btn{
     height: 40px;
     position: fixed;
     right: 0;
     top: 0;
   }
 
-  #clear-cue-btn{
+  #clear-Queue-btn{
     position: fixed;
     height: 40px;
     top: 40px;
@@ -38,7 +38,7 @@
 
 }
 
-#text-cue-input,
+#text-Queue-input,
 #word-box{
   span{
     font-size: 1.3em;
@@ -47,7 +47,7 @@
   }
 }
 
-.word-to-cue{
+.word-to-Queue{
 
 }
 
