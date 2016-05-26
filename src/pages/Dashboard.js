@@ -30,9 +30,8 @@ class Dashboard extends Component{
   }
   render(){
     return (
-      <div >
-        <h1>{this.state.username}</h1>
-        {this.props.children}
+      <div>
+        {React.cloneElement(this.props.children, {user: this.props.user})}
       </div>
     )
   }
