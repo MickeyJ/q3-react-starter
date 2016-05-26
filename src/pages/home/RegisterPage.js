@@ -87,11 +87,9 @@ RegisterPage.contextTypes = {
   router: React.PropTypes.object
 };
 
-function mapStateToProps(state) {
-  return {
-    error: state.user.error
-  }
-}
+const mapStateToProps = (state) =>({
+  error: state.user.error
+});
 
 export default connect(mapStateToProps, {
   userRegister

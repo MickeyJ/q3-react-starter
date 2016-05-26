@@ -11,7 +11,7 @@ class SpeakBox extends Component {
   sayIt(e){
     e.preventDefault();
     const msg = new SpeechSynthesisUtterance();
-    setVoice(msg, 'Alex');
+    setVoice(msg, 'Samantha');
     sayMessage(msg, this.message.value);
     this.message.value = null;
   }
@@ -23,7 +23,8 @@ class SpeakBox extends Component {
           <input
             type="text"
             className="form-control speak-input"
-            placeholder="What to say?"
+            placeholder="What else to say?"
+            value="balls"
             ref={(ref) => this.getInputText(ref)}
           />
           <input
