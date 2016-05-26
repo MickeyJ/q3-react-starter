@@ -1,19 +1,19 @@
 import React from 'react'
-import ReactDOM, { render } from 'react-dom'
+import { render } from 'react-dom'
 import 'react-fastclick';
 
 import { Provider } from 'react-redux'
 import { createStore, applyMiddleware } from 'redux'
 import logger from 'redux-logger'
 import promise from 'redux-promise'
-
 import reducers from './redux/reducers'
 
 import 'bootstrap/dist/css/bootstrap.css'
 import './style/main.scss'
 
-let storeWithMiddleware;
+import Routes from './routes'
 
+let storeWithMiddleware;
 if(process.env.NODE_ENV === 'development'){
   storeWithMiddleware = applyMiddleware(
     logger(), promise
@@ -23,8 +23,6 @@ if(process.env.NODE_ENV === 'development'){
     promise
   )(createStore);
 }
-
-import Routes from './routes'
 
 render(
   <Provider store={storeWithMiddleware(reducers)}>

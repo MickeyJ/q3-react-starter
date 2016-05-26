@@ -1,0 +1,27 @@
+.auth-form{
+  text-align: center;
+  margin-top: 10%;
+
+  input{
+    height: 60px;
+    font-size: 1.5em;
+    padding: 2% 2%;
+    margin: 2% 0;
+  }
+  button{
+    font-size: 1.5em;
+  }
+}
+
+.speak-box{
+  clear: both;
+
+  .speak-input{
+    height: 56px;
+    font-size: 1.5em;
+  }
+
+  button{
+    font-size: 1.5em;
+  }
+}

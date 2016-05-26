@@ -22,17 +22,16 @@ class SpeakBox extends Component {
         <form className="form-inline" onSubmit={this.sayIt.bind(this)}>
           <input
             type="text"
+            value="Balls"
             className="form-control speak-input"
             placeholder="What else to say?"
-            value="balls"
             ref={(ref) => this.getInputText(ref)}
           />
-          <input
+          <button
             type="submit"
-            value="Say It"
-            onClick={this.sayIt.bind(this)}
             className="btn btn-info"
-           />
+            onClick={this.sayIt.bind(this)}
+           >Say It</button>
         </form>
       </div>
     )

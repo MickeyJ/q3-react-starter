@@ -2,23 +2,9 @@
 @import 'commons/nav';
 @import 'components/quickspeech';
 @import 'components/dashboard';
-@import 'components/login';
-@import 'components/register';
+@import 'components/forms';
 
-.speak-box{
-  clear: both;
-}
 
-.speak-input{
-  height: 50px;
-  width: 40vw !important;
-  font-size: 1.5em;
-}
-
-input[type='submit']{
-  height: 50px;
-  font-size: 1.5em;
-}
 
 h1{
   color: DodgerBlue;

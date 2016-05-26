@@ -52,7 +52,7 @@ class RegisterPage extends Component{
   }
   render(){
     return(
-      <form className="col-md-6 col-md-offset-3 register" onSubmit={this.handleSubmit.bind(this)}>
+      <form className="col-md-6 col-md-offset-3 auth-form" onSubmit={this.handleSubmit.bind(this)}>
         <h2>Sign Up</h2>
         <ErrorBox error={this.state.error}/>
         <input
@@ -76,7 +76,7 @@ class RegisterPage extends Component{
           ref={(ref) => this.getPassText(ref)}
           onChange={(e) => this.onInputChange(e)}
         />
-        <input className="btn btn-success register" type="submit" value="Sign Up"/>
+        <button className="btn btn-success" type="submit">Sign Up</button>
       </form>
     )
   }
@@ -87,7 +87,7 @@ RegisterPage.contextTypes = {
 };
 
 const mapStateToProps = (state) =>({
-  error: state.user.error
+  user: state.user.cred
 });
 
 export default connect(mapStateToProps, {
