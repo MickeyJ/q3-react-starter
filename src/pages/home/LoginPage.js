@@ -37,7 +37,7 @@ class LoginPage extends Component{
         .then(res =>{
           if(res.payload.data.user){
             JWT.save(res.payload.data);
-            this.context.router.go('/dashboard');
+            this.context.router.replace('/dashboard');
           } else {
             this.setState({
               error: res.payload.data.error

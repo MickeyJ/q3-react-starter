@@ -41,9 +41,8 @@ class RegisterPage extends Component{
         .then(res =>{
           if(res.payload.data.user){
             JWT.save(res.payload.data);
-            this.context.router.go('/dashboard');
+            this.context.router.replace('/dashboard');
           } else {
-            console.log(res.payload.data.error);
             this.setState({
               error: res.payload.data.error
             });

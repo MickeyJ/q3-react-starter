@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Router, Route, IndexRoute, browserHistory } from 'react-router'
+import { Router, Route, IndexRoute, browserHistory, hashHistory } from 'react-router'
 
 import transitionAuth from './helpers/transition_auth'
 
@@ -20,7 +20,7 @@ import MyPhrasesPage from './pages/dashboard/MyPhrases'
 import ConstructorPage from './pages/dashboard/Constructor'
 
 const Routes = () =>(
-  <Router history={browserHistory}>
+  <Router history={hashHistory}>
     <Route component={Layout}>
 
       <Route path="/" component={Home}>
