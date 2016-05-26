@@ -3,16 +3,12 @@ var path = require('path');
 var logger = require('morgan');
 var bodyParser = require('body-parser');
 
-var users = require('./routes/users');
-
 var app = express();
 
 app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(express.static(path.join(__dirname, 'public')));
-
-app.use('/users', users);
 
 app.use('*', (req, res, next) =>{
   res.sendFile('index.html', {
@@ -26,7 +22,7 @@ app.use(function(req, res, next) {
   next(err);
 });
 
-if (app.get('env') === 'development') {
+if(app.get('env') === 'development') {
   app.use(function(err, req, res, next) {
     res.status(err.status || 500);
     res.send({

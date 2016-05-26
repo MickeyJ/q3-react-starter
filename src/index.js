@@ -18,7 +18,6 @@ const storeWithMiddleware = applyMiddleware(
 
 import Routes from './routes'
 
-
 render(
   <Provider store={storeWithMiddleware(reducers)}>
     <Routes />

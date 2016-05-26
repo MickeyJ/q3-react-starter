@@ -1,10 +1,8 @@
 import React, { Component } from 'react'
 
-import {setVoice, sayMessage} from '../helpers/say_message'
+import { setVoice, sayMessage } from '../helpers/say_message'
 
 const { SpeechSynthesisUtterance, speechSynthesis } = window;
-
-const voices = speechSynthesis.getVoices();
 
 class SpeakBox extends Component {
   getInputText(ref){
@@ -20,9 +18,7 @@ class SpeakBox extends Component {
   render(){
     return (
       <div className="text-center speak-box">
-        {voices.map((x, i) =>{
-          console.log(x);
-        })}
+        
         <form className="form-inline" onSubmit={this.sayIt.bind(this)}>
           <input
             type="text"

@@ -3,32 +3,29 @@ import { connect } from 'react-redux'
 import { verifyUser } from '../redux/actions'
 
 import JWT from '../helpers/jwt_helper'
-import SpeakBox from '../components/SpeakBox';
 
-class Dashboard extends Component{
+class Home extends Component{
   componentWillMount(){
     if(!JWT.fetch()){
-      this.context.router.replace('/');
+      return false
     } else {
-      return this.props.verifyUser().then(res =>{
-        if(!res.payload.data.user){
-          this.context.router.replace('/');
+      return this.props.verifyUser().then(x => {
+        if (x.payload.data.user) {
+          this.context.router.replace('/dashboard');
         }
       })
     }
   }
   render(){
-    return (
-      <div >
-        <h1>{this.props.user.name}</h1>
+    return(
+      <div>
         {this.props.children}
-        <SpeakBox />
       </div>
     )
   }
 }
 
-Dashboard.contextTypes = {
+Home.contextTypes = {
   router: React.PropTypes.object
 };
 
@@ -38,4 +35,4 @@ function mapStateToProps(state) {
 
 export default connect(mapStateToProps, {
   verifyUser
-})(Dashboard);
+})(Home);

@@ -1,5 +1,27 @@
 nav {
   margin-bottom: 2%;
+
+  i{
+    color: white;
+  }
+
+}
+
+.active{
+  color: MediumSeaGreen;
+}
+
+.page-link{
+  color: DodgerBlue;
+}
+
+
+
+a{
+  &:focus{
+    color: MediumSeaGreen;
+    text-decoration: none;
+  }
 }
 
 .icon-link {

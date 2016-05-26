@@ -6,7 +6,7 @@ import {
   IS_AUTHED,
 } from './actions'
 
-const INITIAL_STATE = { cred: {} };
+const INITIAL_STATE = { cred: {}, error: []};
 
 export default function(state = INITIAL_STATE, action) {
   switch(action.type){
