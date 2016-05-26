@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import JWT from '../../helpers/jwt_helper'
 
 import { connect } from 'react-redux'
 import { userLogin } from '../../redux/actions'
@@ -35,6 +36,7 @@ class LoginPage extends Component{
       this.props.userLogin({email, password})
         .then(res =>{
           if(res.payload.data.user){
+            JWT.save(res.payload.data);
             this.context.router.go('/dashboard');
           } else {
             this.setState({
