@@ -9,8 +9,8 @@ const WordPhraseBox = props => (
       {phrases.map((x, i) =>(
         <span
           key={i}
-          onClick={(e) => props.addToCue(e, x)}
-          className='btn btn-primary word-to-cue'>
+          onClick={(e) => props.addToQueue(e, x)}
+          className='btn btn-primary word-to-Queue'>
               {x}
             </span>
       ))}

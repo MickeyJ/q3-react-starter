@@ -12,7 +12,7 @@ export default function(state = INITIAL_STATE, action) {
     
     case GET_USER_PHRASES:
       return {...state,
-        categoriesBody: action.payload.data.categoriesBody
+        categories: action.payload.data.categoriesBody
       };
 
     case ADD_PHRASE:

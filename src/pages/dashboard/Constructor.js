@@ -2,9 +2,9 @@ import React, { Component } from 'react'
 
 import { setVoice, sayMessage } from '../../helpers/say_message'
 
-import TextCueBox from '../../components/TextCueBox'
+import TextQueueBox from '../../components/TextQueueBox'
 import WordPhraseBox from '../../components/WordPhraseBox'
-import InputToCue from '../../components/InputToCue'
+import InputToQueue from '../../components/InputToQueue'
 
 const { SpeechSynthesisUtterance, speechSynthesis } = window;
 
@@ -12,41 +12,41 @@ class ConstructorPage extends Component{
   constructor(){
     super();
     this.state = {
-      textCue: ['Hello. ']
+      textQueue: ['Hello. ']
     };
   }
   getInputText(ref){ 
     this.inputText = ref 
   }
-  setCueState(input){ 
-    this.setState({ textCue: input }); 
+  setQueueState(input){ 
+    this.setState({ textQueue: input }); 
   }
-  pushToCue(input){
-    this.cue.push(input + ' ');
-    this.setCueState(this.cue);
+  pushToQueue(input){
+    this.Queue.push(input + ' ');
+    this.setQueueState(this.Queue);
   }
-  addToCue(e, input){
+  addToQueue(e, input){
     e.preventDefault();
-    this.cue = this.state.textCue;
+    this.Queue = this.state.textQueue;
     if(e.type === "submit"){
       if(!this.inputText.value) return false;
       else {
-        this.pushToCue(input);
+        this.pushToQueue(input);
         this.inputText.value = null
       }
     } 
     else 
-      this.pushToCue(input);
+      this.pushToQueue(input);
   }
-  removeFromCue(index){
-    this.cue = this.state.textCue;
-    this.cue = this.cue.filter((x, i) =>i !== index);
-    this.setCueState(this.cue);
+  removeFromQueue(index){
+    this.Queue = this.state.textQueue;
+    this.Queue = this.Queue.filter((x, i) =>i !== index);
+    this.setQueueState(this.Queue);
   }
-  sayCue(){
+  sayQueue(){
     const msg = new SpeechSynthesisUtterance();
     this.textToSpeak = '';
-    this.state.textCue.map(text =>{
+    this.state.textQueue.map(text =>{
       this.textToSpeak += (text + ' ')
     });
     setVoice(msg, 'Samantha');
@@ -57,19 +57,19 @@ class ConstructorPage extends Component{
       <div>
         <h1 className="text-center">Speech Constructor</h1>
 
-        <TextCueBox
-          textCue={this.state.textCue}
-          removeFromCue={this.removeFromCue.bind(this)}
-          sayCue={this.sayCue.bind(this)}
-          setCueState={this.setCueState.bind(this)}
+        <TextQueueBox
+          textQueue={this.state.textQueue}
+          removeFromQueue={this.removeFromQueue.bind(this)}
+          sayQueue={this.sayQueue.bind(this)}
+          setQueueState={this.setQueueState.bind(this)}
         />
 
         <WordPhraseBox
-          addToCue={this.addToCue.bind(this)}
+          addToQueue={this.addToQueue.bind(this)}
         />
 
-        <InputToCue
-          addToCue={this.addToCue.bind(this)}
+        <InputToQueue
+          addToQueue={this.addToQueue.bind(this)}
           getInputText={this.getInputText.bind(this)}
           inputText={this.inputText}
         />

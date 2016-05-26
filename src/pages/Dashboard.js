@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
-import { verifyUser, getUserCategories } from '../redux/actions'
+import { verifyUser, getUserCategories, addPhrase } from '../redux/actions'
 
 import JWT from '../helpers/jwt_helper'
 import SpeakBox from '../components/SpeakBox'
@@ -14,6 +14,11 @@ class Dashboard extends Component{
         if(this.props.error === 'invalid token'){
           JWT.destroy();
           this.context.router.replace('/');
+        } else {
+          this.props.getUserCategories(this.props.user.id).then(res =>{
+            console.log(res);
+
+          });
         }
       })
     }
@@ -23,6 +28,8 @@ class Dashboard extends Component{
       <div>
         {React.cloneElement(this.props.children, {
           user: this.props.user,
+          phrases: this.props.phrases,
+          addPhrase: this.props.addPhrase
         })}
       </div>
     )
@@ -37,10 +44,12 @@ function mapStateToProps(state) {
   return {
     user: state.user.cred,
     error: state.user.error,
+    phrases: state.phrases.categories
   }
 }
 
 export default connect(mapStateToProps, {
   verifyUser,
-  getUserCategories
+  getUserCategories,
+  addPhrase
 })(Dashboard);

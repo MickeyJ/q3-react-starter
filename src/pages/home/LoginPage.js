@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import JWT from '../../helpers/jwt_helper'
+import JWT from '../../helpers/jwt_helper.js'
 
 import { setVoice, sayMessage } from '../../helpers/say_message'
 
@@ -43,6 +43,7 @@ class LoginPage extends Component{
       this.props.userLogin({email, password})
         .then(res =>{
           if(res.payload.data.user){
+
             JWT.save(res.payload.data);
             this.context.router.replace('/dashboard');
           } else {
