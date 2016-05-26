@@ -8,7 +8,7 @@ const Navbar = (props) => {
     return(
       <nav>
         <NavLink to="/">
-          <span>Home</span>
+          <span>Homes</span>
         </NavLink>
         <i> | </i>
         <NavLink to="/about">
