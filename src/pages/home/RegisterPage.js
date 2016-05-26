@@ -32,7 +32,7 @@ class RegisterPage extends Component{
         password = this.password.value;
     if(!password || !email || !name) {
       this.setState({
-        error: 'yo shit wrong'
+        error: 'yo shit wro'
       });
       return false;
     }
