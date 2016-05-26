@@ -5,7 +5,9 @@ export const phrases = [
   "What is your name?",
   "Nice to meet you.",
   "Where are you from?",
-  "Hey baby."
+  "Hey baby.",
+  "What the fuck?",
+  "Did you say Balls?"
 ];
 
 export const words = [
@@ -14,5 +16,7 @@ export const words = [
   'Goodbye',
   'Yes',
   'No',
-  'Maybe'
+  'Maybe',
+  'Nice',
+  'Balls'
 ];
