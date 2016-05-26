@@ -4,11 +4,14 @@ import { Router, Route, IndexRoute, browserHistory } from 'react-router'
 import transitionAuth from './helpers/transition_auth'
 
 import Layout from './layout/Layout'
+import NotFound from './pages/NotFound'
+
 import Home from './pages/Home'
 import HomeIndex from './pages/home/HomeIndex'
 import AboutPage from './pages/home/AboutPage'
 import RegisterPage from './pages/home/RegisterPage'
 import LoginPage from './pages/home/LoginPage'
+
 import Dashboard from './pages/Dashboard'
 import DashIndex from './pages/dashboard/DashIndex'
 import ProfilePage from './pages/dashboard/ProfilePage'
@@ -36,6 +39,7 @@ const Routes = () =>(
       </Route>
 
     </Route>
+    <Route path="*" component={NotFound} />
   </Router>
 );
 
