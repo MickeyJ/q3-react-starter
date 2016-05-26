@@ -12,9 +12,17 @@ import reducers from './redux/reducers'
 import 'bootstrap/dist/css/bootstrap.css'
 import './style/main.scss'
 
-const storeWithMiddleware = applyMiddleware(
-  logger(), promise
-)(createStore);
+let storeWithMiddleware;
+
+if(process.env.NODE_ENV === 'development'){
+  storeWithMiddleware = applyMiddleware(
+    logger(), promise
+  )(createStore);
+} else {
+  storeWithMiddleware = applyMiddleware(
+    promise
+  )(createStore);
+}
 
 import Routes from './routes'
 
