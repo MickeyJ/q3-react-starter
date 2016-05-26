@@ -22,6 +22,7 @@ class SpeakBox extends Component {
         <form className="form-inline" onSubmit={this.sayIt.bind(this)}>
           <input
             type="text"
+            defaultValue="Hello"
             className="form-control speak-input"
             placeholder="What else to say?"
             ref={(ref) => this.getInputText(ref)}
