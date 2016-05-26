@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 
 import { setVoice, sayMessage } from '../../helpers/say_message'
+import { phrases, words }from '../../data/default'
 
 const { SpeechSynthesisUtterance, speechSynthesis } = window;
 
@@ -8,10 +9,14 @@ class ConstructorPage extends Component{
   constructor(){
     super();
     this.state = {
-      textCue: ['Hello.']
+      textCue: ['Hello. ']
     };
   }
-  addToCue(input){
+  getInputText(ref){
+    this.inputText = ref
+  }
+  addToCue(e, input){
+    e.preventDefault();
     this.cue = this.state.textCue;
     this.cue.push(input + ' ');
     this.setState({
@@ -42,7 +47,7 @@ class ConstructorPage extends Component{
         <section id="text-cue-box">
           <article id="text-cue-input">
             {this.state.textCue.map((x, i) =>(
-              <span onClick={() => this.removeFromCue(x)} key={i}>{x}</span>
+              <span className="btn btn-primary word-to-cue" onClick={() => this.removeFromCue(x)} key={i}>{x}</span>
             ))}
           </article>
           <button onClick={this.sayIt.bind(this)}>
@@ -51,13 +56,33 @@ class ConstructorPage extends Component{
         </section>
 
         <section id="word-box">
-          <button onClick={() => this.addToCue('What is your name?')}>
-            What is your name?
-          </button>
-          <button onClick={() => this.addToCue('My name is Bob.')}>
-            My name is Bob.
-          </button>
+          <div className='col-xs-6'>
+            <h3 className='text-center'>Words</h3>
+            {phrases.map((x, i) =>(
+              <span
+                key={i}
+                onClick={(e) => this.addToCue(e, x)}
+                className='btn btn-primary word-to-cue'>
+              {x}
+            </span>
+            ))}
+          </div>
         </section>
+
+        <form className="form-inline" onSubmit={(e) =>this.addToCue(e, this.inputText.value)}>
+          <input
+            type="text"
+            defaultValue="Hello"
+            className="form-control speak-input"
+            placeholder="What else to say?"
+            ref={(ref) => this.getInputText(ref)}
+          />
+          <button
+            type="submit"
+            className="btn btn-info"
+            onClick={(e) =>this.addToCue(e, this.inputText.value)}
+          >Add To Cue</button>
+        </form>
 
       </div>
     )

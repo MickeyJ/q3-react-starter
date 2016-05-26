@@ -33,7 +33,6 @@ class Dashboard extends Component{
       <div >
         <h1>{this.state.username}</h1>
         {this.props.children}
-        <SpeakBox />
       </div>
     )
   }
