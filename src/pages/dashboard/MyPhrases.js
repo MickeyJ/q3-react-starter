@@ -5,22 +5,16 @@ import { setVoice, sayMessage } from '../../helpers/say_message';
 import SpeakBox from '../../components/SpeakBox';
 
 class MyPhrasesPage extends React.Component{
-  sayIt(e, text){
-    e.persist();
-    const msg = new window.SpeechSynthesisUtterance();
-    setVoice(msg, 'Alex');
-    sayMessage(msg, text);
-  }
   render(){
     return(
       <div>
         <h1 className="text-center">My Phrases</h1>
         <div className="col-xs-6">
-          {this.props.phrases.map((x, i) =>(
+          {this.props.phrases.map((cat, catIdx) =>(
             <div>
-              <h3 className="phrase-text" key={i}>{x.name}</h3>
-              {this.props.phrases[0].phrases.map((x, i) =>(
-                <p className="phrase-text" key={i}>{x.phrase}</p>
+              <h3 className="phrase-text" key={catIdx}>{cat.name}</h3>
+              {this.props.phrases[0].phrases.map((phrase, phraseIdx) =>(
+                <p className="phrase-text" key={phraseIdx}>{phrase.phrase}</p>
               ))}
             </div>
           ))}

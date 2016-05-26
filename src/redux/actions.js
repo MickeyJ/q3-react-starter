@@ -10,7 +10,7 @@ export const ADD_PHRASE = 'ADD_PHRASE';
 export const ADD_CATEGORY = 'ADD_CATEGORY';
 export const ADD_PHRASE_TO_CATEGORY = 'ADD_PHRASE_TO_CATEGORY';
 
-const API = 'http://localhost:3000/api/v1';
+const API = '/api/v1';
 
 export function verifyUser(){
   const request = axios({
