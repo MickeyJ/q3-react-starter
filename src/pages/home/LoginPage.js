@@ -6,7 +6,7 @@ import { setVoice, sayMessage } from '../../helpers/say_message'
 const { SpeechSynthesisUtterance, speechSynthesis } = window;
 
 import { connect } from 'react-redux'
-import { userLogin } from '../../redux/actions'
+import { userLogin, getUserCategories } from '../../redux/actions'
 
 import ErrorBox from '../../components/ErrorBox'
 
@@ -87,5 +87,6 @@ const mapStateToProps = (state) =>({
 });
 
 export default connect(mapStateToProps, {
-  userLogin
+  userLogin,
+  getUserCategories
 })(LoginPage);

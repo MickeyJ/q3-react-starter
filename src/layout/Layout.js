@@ -10,7 +10,7 @@ class Layout extends Component{
   }
   render(){
     return(
-      <div className="container-fluid">
+      <div>
         <Navbar
           token={JWT.fetch()}
           handleLogout={this.handleLogout.bind(this)}

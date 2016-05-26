@@ -1,5 +1,6 @@
 body {
-  padding: 15px;
+  padding-top: 15px;
+  padding-bottom: 15px;
   font-family: Open, sans-serif;
   font-size: 20px;
   background-color: rgb(45, 44, 44);
@@ -7,6 +8,7 @@ body {
 
 main{
   clear: both;
+  overflow: hidden;
 }
 
 h2{
