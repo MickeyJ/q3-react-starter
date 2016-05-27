@@ -1,12 +1,10 @@
 import React from 'react'
 
 const InputToQueue = props => (
-  <div className='col-xs-6'>
-    <h3 className='text-center'>Categories?</h3>
-    <form 
+  <div className='col-xs-12'>
+    <form
       className="form-inline add-text-form" 
       onSubmit={(e) => props.addToQueue(e, props.inputText.value)}>
-      
       <input
         type="text"
         className="form-control speak-input"

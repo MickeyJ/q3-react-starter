@@ -1,7 +1,7 @@
 #text-Queue-box{
   position: relative;
   width: 100%;
-  height: 125px;
+  height: 120px;
   border: 1px solid black;
   border-radius: 10px;
   background: white;
@@ -9,24 +9,36 @@
 
   #text-Queue-input{
     float: left;
-
+    margin-right: 150px;
   }
 
   button{
     width: 150px;
   }
 
+  span.delete {
+    display: none;
+  }
+
+  span.word-to-Queue{
+    &:hover {
+      span.delete {
+        display: inline-block;
+      }
+    }
+  }
+
   #say-Queue-btn{
-    height: 40px;
-    position: fixed;
+    height: 58px;
+    position: absolute;
     right: 0;
     top: 0;
   }
 
   #clear-Queue-btn{
-    position: fixed;
-    height: 40px;
-    top: 40px;
+    position: absolute;
+    height: 58px;
+    top: 60px;
     right: 0;
   }
 
@@ -41,14 +53,62 @@
 #text-Queue-input,
 #word-box{
   span{
-    font-size: 1.3em;
+    font-size: 1em;
     margin-right: 5px;
     margin-bottom: 5px;
   }
 }
 
+
+
+.word-bank-2, .word-bank-3 {
+  padding: 0;
+}
+
+.word-bank-3 {
+  margin-right: -5%;
+}
+
+.word-bank-4 {
+  margin-right: -2%;
+}
+
+.word-bank{
+  margin-right: -2%;
+}
+
+.pronouns{
+  height: 50px;
+  width: 90px;
+  // color: black;
+  background-color: rgb(152, 152, 152);
+}
+
+.verbs{
+  height: 50px;
+  width: 90px;
+  background-color: rgb(0, 53, 102);
+}
+
+.negatives {
+  height: 50px;
+  width: 90px;
+  background-color: rgb(247, 67, 67);
+}
+
+.adjectives {
+  height: 50px;
+  width: 100px;
+  background-color: rgb(91, 186, 199);
+}
+
+.preps{
+  height: 50px;
+  width: 90px;
+  background-color: rgb(2, 133, 162);
+}
+
 .add-text-form{
-  transition: all 0.1s;
 
   input{
     height: 56px;
@@ -56,6 +116,7 @@
     padding: 2% 2%;
     margin: 2% 0;
   }
+
   button{
     font-size: 1.5em;
   }
