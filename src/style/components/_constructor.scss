@@ -1,16 +1,15 @@
 #text-Queue-box{
   position: relative;
   width: 100%;
-  height: 125px;
+  height: 120px;
   border: 1px solid black;
   border-radius: 10px;
   background: white;
   overflow: auto;
-  margin-bottom: 5%;
 
   #text-Queue-input{
     float: left;
-
+    margin-right: 150px;
   }
 
   button{
@@ -30,16 +29,16 @@
   }
 
   #say-Queue-btn{
-    height: 40px;
-    position: fixed;
+    height: 58px;
+    position: absolute;
     right: 0;
     top: 0;
   }
 
   #clear-Queue-btn{
-    position: fixed;
-    height: 40px;
-    top: 40px;
+    position: absolute;
+    height: 58px;
+    top: 60px;
     right: 0;
   }
 
@@ -82,6 +81,10 @@
   margin-right: -3.2%;
 }
 
+.word-bank{
+  margin-right: -2%;
+}
+
 .pronouns{
   height: 50px;
   width: 90px;
@@ -114,9 +117,6 @@
 }
 
 .add-text-form{
-  position: absolute;
-  right: -60%;
-  transition: all 0.1s;
 
   input{
     height: 56px;
@@ -124,11 +124,9 @@
     padding: 2% 2%;
     margin: 2% 0;
   }
+
   button{
     font-size: 1.5em;
   }
 
-  &:hover{
-    right: 0;
-  }
 }

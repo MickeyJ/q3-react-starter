@@ -64,14 +64,14 @@ class ConstructorPage extends Component{
           setQueueState={this.setQueueState.bind(this)}
         />
 
-        <WordPhraseBox
-          addToQueue={this.addToQueue.bind(this)}
-        />
-
         <InputToQueue
           addToQueue={this.addToQueue.bind(this)}
           getInputText={this.getInputText.bind(this)}
           inputText={this.inputText}
+        />
+
+        <WordPhraseBox
+          addToQueue={this.addToQueue.bind(this)}
         />
 
       </div>

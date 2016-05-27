@@ -3,25 +3,25 @@ import React from 'react'
 import { phrases, words, pronouns, verbs, negatives, adjectives, preps }from '../data/default'
 
 const WordPhraseBox = props => (
-  <section id="word-box">
+  <section id="word-box" className="row-fluid">
     <div className='col-xs-2 word-bank-1'>
       {pronouns.map((x, i) =>(
         <span
           key={i}
           onClick={(e) => props.addToQueue(e, x)}
           className='btn btn-primary pronouns'>
-              {x}
-            </span>
+          {x}
+        </span>
       ))}
     </div>
     <div className='col-xs-1 word-bank-2'>
-    {negatives.map((x, i) =>(
-      <span
-      key={i}
-      onClick={(e) => props.addToQueue(e, x)}
-      className='btn btn-primary negatives'>
-      {x}
-      </span>
+      {negatives.map((x, i) =>(
+        <span
+          key={i}
+          onClick={(e) => props.addToQueue(e, x)}
+          className='btn btn-primary negatives'>
+          {x}
+       </span>
     ))}
     </div>
     <div className='col-xs-3 word-bank-3'>
@@ -30,17 +30,17 @@ const WordPhraseBox = props => (
           key={i}
           onClick={(e) => props.addToQueue(e, x)}
           className='btn btn-primary verbs'>
-              {x}
-            </span>
+          {x}
+        </span>
       ))}
     </div>
     <div className='col-xs-2 word-bank-4'>
       {preps.map((x, i) =>(
         <span
-        key={i}
-        onClick={(e) => props.addToQueue(e, x)}
-        className='btn btn-primary preps'>
-        {x}
+          key={i}
+          onClick={(e) => props.addToQueue(e, x)}
+          className='btn btn-primary preps'>
+          {x}
         </span>
       ))}
     </div>
@@ -50,8 +50,8 @@ const WordPhraseBox = props => (
           key={i}
           onClick={(e) => props.addToQueue(e, x)}
           className='btn btn-primary adjectives'>
-              {x}
-            </span>
+          {x}
+        </span>
       ))}
     </div>
   </section>
