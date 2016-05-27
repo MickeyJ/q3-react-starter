@@ -6,6 +6,8 @@ import SpeakBox from '../../components/SpeakBox';
 const DashIndex = (props) => (
   <div id="dashboard">
 
+    <SpeakBox selectedVoice={props.selectedVoice}/>
+    
     <div className="col-xs-8 col-xs-offset-2 dash-box">
 
       <IconLink
@@ -28,6 +30,7 @@ const DashIndex = (props) => (
       />
 
     </div>
+
 
   </div>
 );

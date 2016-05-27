@@ -50,6 +50,7 @@ class Dashboard extends Component{
           addPhrase: this.props.addPhrase,
           deletePhrase: this.props.deletePhrase
         })}
+
       </div>
     )
     };

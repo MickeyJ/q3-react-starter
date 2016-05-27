@@ -3,6 +3,8 @@ import React from 'react'
 import { phrases, words }from '../../data/default'
 import { setVoice, sayMessage } from '../../helpers/say_message';
 
+import SpeakBox from '../../components/SpeakBox';
+
 class QuickSpeechPage extends React.Component{
   sayIt(e, text){
     e.persist();
@@ -13,7 +15,7 @@ class QuickSpeechPage extends React.Component{
   render(){
     return(
       <div className='quick-speech'>
-
+        <SpeakBox selectedVoice={this.props.selectedVoice}/>
         <div className='col-xs-6'>
           <h3 className='text-center'>Words</h3>
           {words.map((x, i) =>(

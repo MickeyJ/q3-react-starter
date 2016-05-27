@@ -11,7 +11,8 @@ class SpeakBox extends Component {
   sayIt(e){
     e.preventDefault();
     const msg = new SpeechSynthesisUtterance();
-    setVoice(msg, 'Samantha');
+    const voice = this.props.selectedVoice || 'Samantha';
+    setVoice(msg, voice);
     sayMessage(msg, this.message.value);
     this.message.value = null;
   }
