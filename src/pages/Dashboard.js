@@ -16,7 +16,6 @@ class Dashboard extends Component{
           this.context.router.replace('/');
         } else {
           this.props.getPhrases(this.props.user.id).then(res =>{
-
             console.log(res);
           });
         }
