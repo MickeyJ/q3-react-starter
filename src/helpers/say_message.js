@@ -7,7 +7,7 @@ export function getVoices(){
     });
   };
 }
-// getVoices();
+getVoices();
 
 export function setVoice(msg, voice){
   const voices = speechSynthesis.getVoices();

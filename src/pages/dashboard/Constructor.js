@@ -49,7 +49,7 @@ class ConstructorPage extends Component{
     this.state.textQueue.map(text =>{
       this.textToSpeak += (text + ' ')
     });
-    setVoice(msg, 'Samantha');
+    setVoice(msg, 'Victoria');
     sayMessage(msg, this.textToSpeak);
   }
   render(){
