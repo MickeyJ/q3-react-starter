@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
-import { verifyUser, getPhrases, addPhrase } from '../redux/actions'
+import { verifyUser, getPhrases, addPhrase, deletePhrase } from '../redux/actions'
 
 import JWT from '../helpers/jwt_helper'
 import SpeakBox from '../components/SpeakBox'
@@ -15,7 +15,7 @@ class Dashboard extends Component{
           JWT.destroy();
           this.context.router.replace('/');
         } else {
-          this.props.getPhrases(this.props.user.id).then(res =>{
+          this.props.getPhrases().then(res =>{
             console.log(res);
           });
         }
@@ -28,7 +28,8 @@ class Dashboard extends Component{
         {React.cloneElement(this.props.children, {
           user: this.props.user,
           phrases: this.props.phrases,
-          addPhrase: this.props.addPhrase
+          addPhrase: this.props.addPhrase,
+          deletePhrase: this.props.deletePhrase
         })}
       </div>
     )
@@ -50,5 +51,6 @@ function mapStateToProps(state) {
 export default connect(mapStateToProps, {
   verifyUser,
   getPhrases,
-  addPhrase
+  addPhrase,
+  deletePhrase
 })(Dashboard);

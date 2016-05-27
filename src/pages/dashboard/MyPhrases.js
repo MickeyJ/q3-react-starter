@@ -19,6 +19,11 @@ class MyPhrasesPage extends React.Component{
   getPhraseText(ref){
     this.phrase = ref
   }
+  deletePhrase(id){
+    return this.props.deletePhrase(id).then(res =>{
+      console.log(res);
+    })
+  }
   handleSubmit(e){
     e.preventDefault();
     let phrase = this.phrase.value;
@@ -51,7 +56,10 @@ class MyPhrasesPage extends React.Component{
         </form>
         <div className="col-xs-6">
           {this.props.phrases.map((x, i) =>(
-            <p className="phrase-text" key={i}>{x.phrase}</p>
+            <div>
+              <p className="phrase-text" key={i}>{x.phrase}</p>
+              <button onClick={() => this.deletePhrase(x.id)}>X</button>
+            </div>
           ))}
         </div>
       </div>
