@@ -17,6 +17,18 @@
     width: 150px;
   }
 
+  span.delete {
+    display: none;
+  }
+
+  span.word-to-Queue{
+    &:hover {
+      span.delete {
+        display: inline-block;
+      }
+    }
+  }
+
   #say-Queue-btn{
     height: 40px;
     position: fixed;
