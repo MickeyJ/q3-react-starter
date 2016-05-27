@@ -7,6 +7,7 @@ export const LOG_IN = 'LOG_IN';
 
 export const GET_PHRASES = 'GET_PHRASES';
 export const ADD_PHRASE = 'ADD_PHRASE';
+export const DELETE_PHRASE = 'DELETE_PHRASE';
 
 const API = 'http://localhost:3000/api/v1';
 
@@ -60,4 +61,12 @@ export function addPhrase(phrase){
   }
 }
 
+
+export function deletePhrase(id){
+  const request = axios.delete(`${API}/phrases/${id}`);
+  return{
+    type: DELETE_PHRASE,
+    payload: request
+  }
+}
 

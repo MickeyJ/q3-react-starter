@@ -1,6 +1,6 @@
 .auth-form{
   text-align: center;
-  margin-top: 10%;
+  margin-top: 6%;
 
   input{
     height: 60px;
@@ -24,4 +24,12 @@
   button{
     font-size: 1.5em;
   }
+}
+
+fieldset{
+
+  label{
+    color: white;
+  }
+
 }

@@ -1,30 +1,24 @@
 import React, { Component } from 'react'
 import JWT from '../../helpers/jwt_helper.js'
-
+import { connect } from 'react-redux'
+import { userLogin } from '../../redux/actions'
 import { setVoice, sayMessage } from '../../helpers/say_message'
 
-const { SpeechSynthesisUtterance, speechSynthesis } = window;
-
-import { connect } from 'react-redux'
-import { userLogin, getUserCategories } from '../../redux/actions'
 
 import ErrorBox from '../../components/ErrorBox'
+
+const { SpeechSynthesisUtterance, speechSynthesis } = window;
 
 class LoginPage extends Component{
   constructor(){
     super();
-    this.state ={
-      error: false
-    };
+    this.state ={ error: false };
   }
   getEmailText(ref){
     this.email = ref;
   }
   getPassText(ref){
     this.password = ref
-  }
-  onInputChange(e){
-    // console.log(this.email.value);
   }
   handleSubmit(e){
     e.preventDefault();
@@ -39,15 +33,14 @@ class LoginPage extends Component{
       });
       return false
     }
-    return (
+    return(
       this.props.userLogin({email, password})
         .then(res =>{
           if(res.payload.data.user){
-
             JWT.save(res.payload.data);
             this.context.router.replace('/dashboard');
           } else {
-          const msg = new SpeechSynthesisUtterance();
+            const msg = new SpeechSynthesisUtterance();
             setVoice(msg, 'Samantha');
             sayMessage(msg, res.payload.data.error);
             this.setState({
@@ -67,14 +60,12 @@ class LoginPage extends Component{
           placeholder="Email"
           className="form-control login"
           ref={(ref) => this.getEmailText(ref)}
-          onChange={(e) => this.onInputChange(e)}
         />
         <input
           type="password"
           placeholder="Password"
           className="form-control login"
           ref={(ref) => this.getPassText(ref)}
-          onChange={(e) => this.onInputChange(e)}
         />
         <button className="btn btn-success" type="submit">Log In</button>
       </form>
@@ -91,6 +82,5 @@ const mapStateToProps = (state) =>({
 });
 
 export default connect(mapStateToProps, {
-  userLogin,
-  getUserCategories
+  userLogin
 })(LoginPage);

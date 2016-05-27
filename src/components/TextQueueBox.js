@@ -19,13 +19,13 @@ const TextQueueBox = props => (
       id="say-Queue-btn"
       className="btn btn-success"
       onClick={props.sayQueue.bind(this)}>
-      Say It
+      Speak
     </button>
     <button
       id="clear-Queue-btn"
       className="btn btn-warning"
       onClick={() => props.setQueueState( [] )}>
-      Clear Queue
+      Clear
     </button>
 
   </section>
