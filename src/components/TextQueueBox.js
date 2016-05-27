@@ -17,13 +17,13 @@ const TextQueueBox = props => (
 
     <button
       id="say-Queue-btn"
-      className="btn btn-success"
+      className="btn"
       onClick={props.sayQueue.bind(this)}>
       Speak
     </button>
     <button
       id="clear-Queue-btn"
-      className="btn btn-warning"
+      className="btn"
       onClick={() => props.setQueueState( [] )}>
       Clear
     </button>

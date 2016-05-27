@@ -34,6 +34,8 @@
     position: absolute;
     right: 0;
     top: 0;
+    background-color: rgb(114, 195, 142);
+    color: white;
   }
 
   #clear-Queue-btn{
@@ -42,6 +44,8 @@
     height: 58px;
     top: 60px;
     right: 0;
+    background-color: rgb(240, 187, 117);
+    color: white;
   }
 
   &:after{
