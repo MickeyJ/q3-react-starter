@@ -6,6 +6,7 @@
   border-radius: 10px;
   background: white;
   overflow: auto;
+  margin-bottom: 5%;
 
   #text-cue-input{
     float: left;
@@ -41,14 +42,53 @@
 #text-cue-input,
 #word-box{
   span{
-    font-size: 1.3em;
+    font-size: 1em;
     margin-right: 5px;
     margin-bottom: 5px;
   }
 }
 
-.word-to-cue{
+.word-bank-2, .word-bank-3 {
+  padding: 0;
+}
 
+.word-bank-3 {
+  margin-right: -5%;
+}
+
+.word-bank-4 {
+  margin-right: -2%;
+}
+
+.pronouns{
+  height: 50px;
+  width: 90px;
+  // color: black;
+  background-color: rgb(152, 152, 152);
+}
+
+.verbs{
+  height: 50px;
+  width: 90px;
+  background-color: rgb(0, 53, 102);
+}
+
+.negatives {
+  height: 50px;
+  width: 90px;
+  background-color: rgb(247, 67, 67);
+}
+
+.adjectives {
+  height: 50px;
+  width: 100px;
+  background-color: rgb(91, 186, 199);
+}
+
+.preps{
+  height: 50px;
+  width: 90px;
+  background-color: rgb(2, 133, 162);
 }
 
 .add-text-form{
