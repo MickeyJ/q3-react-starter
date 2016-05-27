@@ -15,11 +15,11 @@ class ConstructorPage extends Component{
       textQueue: ['Hello. ']
     };
   }
-  getInputText(ref){ 
-    this.inputText = ref 
+  getInputText(ref){
+    this.inputText = ref
   }
-  setQueueState(input){ 
-    this.setState({ textQueue: input }); 
+  setQueueState(input){
+    this.setState({ textQueue: input });
   }
   pushToQueue(input){
     this.Queue.push(input + ' ');
@@ -34,8 +34,8 @@ class ConstructorPage extends Component{
         this.pushToQueue(input);
         this.inputText.value = null
       }
-    } 
-    else 
+    }
+    else
       this.pushToQueue(input);
   }
   removeFromQueue(index){
@@ -73,7 +73,7 @@ class ConstructorPage extends Component{
         <WordPhraseBox
           addToQueue={this.addToQueue.bind(this)}
         />
-        
+
       </div>
     )
   }
