@@ -55,7 +55,7 @@ class ConstructorPage extends Component{
   render(){
     return(
       <div>
-        <h1 className="text-center">Speech Constructor</h1>
+        <h2 className="text-center">Speech Constructor</h2>
 
         <TextQueueBox
           textQueue={this.state.textQueue}
