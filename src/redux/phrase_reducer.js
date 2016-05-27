@@ -1,33 +1,21 @@
 import {
-  GET_USER_PHRASES,
+  GET_PHRASES,
   ADD_PHRASE,
-  ADD_CATEGORY,
-  ADD_PHRASE_TO_CATEGORY,
 } from './actions'
 
-const INITIAL_STATE = { categories: []};
+const INITIAL_STATE = { phrases: []};
 
 export default function(state = INITIAL_STATE, action) {
   switch(action.type){
     
-    case GET_USER_PHRASES:
+    case GET_PHRASES:
       return {...state,
-        categories: action.payload.data.categoriesBody
+        phrases: action.payload.data.phrases
       };
-
+ 
     case ADD_PHRASE:
-      return {...state,
-        categories: [ action.payload.data.phrase[0], ...state.categories ]
-      };
-
-    case ADD_CATEGORY:
-      return {...state,
-        categories: action.payload.data.cats
-      };
-
-    case ADD_PHRASE_TO_CATEGORY:
-      return {...state,
-        categories: action.payload.data.cats
+      return {...state
+        // categories: action.payload.data.phrase[0], ...state.categories
       };
     
     default:

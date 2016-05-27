@@ -14,7 +14,6 @@ import LoginPage from './pages/home/LoginPage'
 
 import Dashboard from './pages/Dashboard'
 import DashIndex from './pages/dashboard/DashIndex'
-import ProfilePage from './pages/dashboard/ProfilePage'
 import QuickSpeechPage from './pages/dashboard/QuickSpeech'
 import MyPhrasesPage from './pages/dashboard/MyPhrases'
 import ConstructorPage from './pages/dashboard/Constructor'
@@ -32,7 +31,6 @@ const Routes = () =>(
 
       <Route path='/dashboard' component={Dashboard}>
         <IndexRoute component={DashIndex}/>
-        <Route path="/profile" component={ProfilePage}/>
         <Route path="/quick" component={QuickSpeechPage}/>
         <Route path="/phrases" component={MyPhrasesPage}/>
         <Route path="/constructor" component={ConstructorPage}/>

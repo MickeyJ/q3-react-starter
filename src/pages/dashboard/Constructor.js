@@ -71,6 +71,7 @@ class ConstructorPage extends Component{
         />
 
         <WordPhraseBox
+          myPhrases={this.props.phrases}
           addToQueue={this.addToQueue.bind(this)}
         />
 

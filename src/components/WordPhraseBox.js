@@ -54,6 +54,16 @@ const WordPhraseBox = props => (
         </span>
       ))}
     </div>
+    <div className='col-xs-2 word-bank-1'>
+      {props.myPhrases.map((x, i) =>(
+        <span
+          key={i}
+          onClick={(e) => props.addToQueue(e, x.phrase)}
+          className='btn btn-primary'>
+          {x.phrase}
+        </span>
+      ))}
+    </div>
   </section>
 );
 

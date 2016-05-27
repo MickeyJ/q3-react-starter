@@ -5,10 +5,8 @@ export const IS_AUTHED = 'IS_AUTHED';
 export const SIGN_UP = 'SIGN_UP';
 export const LOG_IN = 'LOG_IN';
 
-export const GET_USER_PHRASES = 'GET_USER_PHRASES';
+export const GET_PHRASES = 'GET_PHRASES';
 export const ADD_PHRASE = 'ADD_PHRASE';
-export const ADD_CATEGORY = 'ADD_CATEGORY';
-export const ADD_PHRASE_TO_CATEGORY = 'ADD_PHRASE_TO_CATEGORY';
 
 const API = 'http://localhost:3000/api/v1';
 
@@ -40,10 +38,10 @@ export function userLogin(credentials){
   }
 }
 
-export function getUserCategories(id){
-  const request = axios.get(`${API}/categories/${id}`);
+export function getPhrases(){
+  const request = axios.get(`${API}/phrases`);
   return{
-    type: GET_USER_PHRASES,
+    type: GET_PHRASES,
     payload: request
   }
 }
@@ -62,19 +60,4 @@ export function addPhrase(phrase){
   }
 }
 
-export function addCategory(data){
-  const request = axios.post(`${API}/categories/`, data);
-  return{
-    type: ADD_CATEGORY,
-    payload: request
-  }
-}
-
-export function addPhraseToCategory(id, data){
-  const request = axios.post(`${API}/categories/${id}`, data);
-  return{
-    type: ADD_PHRASE_TO_CATEGORY,
-    payload: request
-  }
-}
 

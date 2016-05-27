@@ -31,10 +31,6 @@ const Navbar = (props) => {
           <span>Dashboard</span>
         </NavLink>
         <i> | </i>
-        <NavLink to="/profile">
-          <span>Profile</span>
-        </NavLink>
-        <i> | </i>
         <NavLink to="/phrases">
           <span>My Phrases</span>
         </NavLink>

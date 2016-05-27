@@ -38,31 +38,22 @@ class MyPhrasesPage extends React.Component{
   render(){
     return(
       <div>
-        <h1 className="text-center">My Phrases</h1>
-        
+        <h2>My Phrases</h2>
         <form className="col-md-6 col-md-offset-3 auth-form" onSubmit={this.handleSubmit.bind(this)}>
-          <h2>Add Up</h2>
           <ErrorBox error={this.state.error}/>
           <input
             type="text"
-            placeholder="phrase it"
+            placeholder="Type Here"
             className="form-control register"
             ref={(ref) => this.getPhraseText(ref)}
           />
           <button className="btn btn-success" type="submit">Add Phrase</button>
         </form>
-
         <div className="col-xs-6">
-          {this.props.phrases.map((cat, catIdx) =>(
-            <div>
-              <h3 className="phrase-text" key={cat.name}>{cat.name}</h3>
-              {this.props.phrases[0].phrases.map((phrase, phraseIdx) =>(
-                <p className="phrase-text" key={phrase.phrase}>{phrase.phrase}</p>
-              ))}
-            </div>
+          {this.props.phrases.map((x, i) =>(
+            <p className="phrase-text" key={i}>{x.phrase}</p>
           ))}
         </div>
-
       </div>
     )
   }

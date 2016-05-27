@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
-import { verifyUser, getUserCategories, addPhrase } from '../redux/actions'
+import { verifyUser, getPhrases, addPhrase } from '../redux/actions'
 
 import JWT from '../helpers/jwt_helper'
 import SpeakBox from '../components/SpeakBox'
@@ -15,9 +15,9 @@ class Dashboard extends Component{
           JWT.destroy();
           this.context.router.replace('/');
         } else {
-          this.props.getUserCategories(this.props.user.id).then(res =>{
-            console.log(res);
+          this.props.getPhrases(this.props.user.id).then(res =>{
 
+            console.log(res);
           });
         }
       })
@@ -44,12 +44,12 @@ function mapStateToProps(state) {
   return {
     user: state.user.cred,
     error: state.user.error,
-    phrases: state.phrases.categories
+    phrases: state.phrases.phrases
   }
 }
 
 export default connect(mapStateToProps, {
   verifyUser,
-  getUserCategories,
+  getPhrases,
   addPhrase
 })(Dashboard);
