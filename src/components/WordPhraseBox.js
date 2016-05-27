@@ -8,7 +8,7 @@ const WordPhraseBox = props => (
       {pronouns.map((x, i) =>(
         <span
           key={i}
-          onClick={(e) => props.addToCue(e, x)}
+          onClick={(e) => props.addToQueue(e, x)}
           className='btn btn-primary pronouns'>
               {x}
             </span>
@@ -18,7 +18,7 @@ const WordPhraseBox = props => (
     {negatives.map((x, i) =>(
       <span
       key={i}
-      onClick={(e) => props.addToCue(e, x)}
+      onClick={(e) => props.addToQueue(e, x)}
       className='btn btn-primary negatives'>
       {x}
       </span>
@@ -28,7 +28,7 @@ const WordPhraseBox = props => (
       {verbs.map((x, i) =>(
         <span
           key={i}
-          onClick={(e) => props.addToCue(e, x)}
+          onClick={(e) => props.addToQueue(e, x)}
           className='btn btn-primary verbs'>
               {x}
             </span>
@@ -38,7 +38,7 @@ const WordPhraseBox = props => (
       {preps.map((x, i) =>(
         <span
         key={i}
-        onClick={(e) => props.addToCue(e, x)}
+        onClick={(e) => props.addToQueue(e, x)}
         className='btn btn-primary preps'>
         {x}
         </span>
@@ -48,10 +48,10 @@ const WordPhraseBox = props => (
       {adjectives.map((x, i) =>(
         <span
           key={i}
-          onClick={(e) => props.addToCue(e, x)}
+          onClick={(e) => props.addToQueue(e, x)}
           className='btn btn-primary adjectives'>
-          {x}
-          </span>
+              {x}
+            </span>
       ))}
     </div>
   </section>
