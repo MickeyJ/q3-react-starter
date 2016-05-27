@@ -14,32 +14,35 @@ class QuickSpeechPage extends React.Component{
   }
   render(){
     return(
-      <div className='quick-speech'>
-        <SpeakBox selectedVoice={this.props.selectedVoice}/>
-        <div className='col-xs-6'>
-          <h3 className='text-center'>Words</h3>
-          {words.map((x, i) =>(
-            <span
-              key={i}
-              onClick={(e) => this.sayIt(e, x)}
-              className='btn quick-speech-button'>
-              {x}
-            </span>
-          ))}
-        </div>
+      <div>
+        <h2 className="phrases">Quick Speech</h2>
+        <div className='quick-speech'>
+          <SpeakBox selectedVoice={this.props.selectedVoice}/>
+          <div className='col-xs-6'>
+            <h3 className='text-center'>Words</h3>
+            {words.map((x, i) =>(
+              <span
+                key={i}
+                onClick={(e) => this.sayIt(e, x)}
+                className='btn quick-speech-button'>
+                {x}
+              </span>
+            ))}
+          </div>
 
-        <div className='col-xs-6'>
-          <h3 className='text-center'>Phrases</h3>
-          {phrases.map((x, i) =>(
-            <span
-              key={i}
-              onClick={(e) => this.sayIt(e, x)}
-              className='btn quick-speech-button'>
-              {x}
-            </span>
-          ))}
-        </div>
+          <div className='col-xs-6'>
+            <h3 className='text-center'>Phrases</h3>
+            {phrases.map((x, i) =>(
+              <span
+                key={i}
+                onClick={(e) => this.sayIt(e, x)}
+                className='btn quick-speech-button'>
+                {x}
+              </span>
+            ))}
+          </div>
 
+        </div>
       </div>
     )
   }
