@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import JWT from '../../helpers/jwt_helper'
+import JWT from '../../helpers/jwt_helper.js'
 
 import { setVoice, sayMessage } from '../../helpers/say_message'
 
@@ -33,9 +33,9 @@ class LoginPage extends Component{
     if (!password || !email) {
       const msg = new SpeechSynthesisUtterance();
       setVoice(msg, 'Samantha');
-      sayMessage(msg, 'yo shit wrong');
+      sayMessage(msg, 'Both fields are required.');
       this.setState({
-        error: 'yo shit wrong'
+        error: 'Both fields are required.'
       });
       return false
     }
@@ -43,9 +43,13 @@ class LoginPage extends Component{
       this.props.userLogin({email, password})
         .then(res =>{
           if(res.payload.data.user){
+
             JWT.save(res.payload.data);
             this.context.router.replace('/dashboard');
           } else {
+          const msg = new SpeechSynthesisUtterance();
+            setVoice(msg, 'Samantha');
+            sayMessage(msg, res.payload.data.error);
             this.setState({
               error: res.payload.data.error
             });

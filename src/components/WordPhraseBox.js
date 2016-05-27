@@ -8,6 +8,7 @@ const WordPhraseBox = props => (
       {pronouns.map((x, i) =>(
         <span
           key={i}
+<<<<<<< HEAD
           onClick={(e) => props.addToCue(e, x)}
           className='btn btn-primary pronouns'>
               {x}
@@ -50,8 +51,8 @@ const WordPhraseBox = props => (
           key={i}
           onClick={(e) => props.addToCue(e, x)}
           className='btn btn-primary adjectives'>
-              {x}
-            </span>
+          {x}
+          </span>
       ))}
     </div>
   </section>

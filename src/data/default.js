@@ -1,13 +1,13 @@
 
 export const phrases = [
-  'How are you?',
+  "How are you?",
   "I'm good.",
   "What is your name?",
   "Nice to meet you.",
   "Where are you from?",
-  "Hey baby.",
   "What the fuck?",
-  "Did you say Balls?"
+  "Holy shit!",
+  "Thank you"
 ];
 
 export const words = [

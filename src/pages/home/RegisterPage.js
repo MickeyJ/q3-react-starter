@@ -1,5 +1,8 @@
 import React, { Component } from 'react'
-import JWT from '../../helpers/jwt_helper'
+import JWT from '../../helpers/jwt_helper.js'
+
+import { setVoice, sayMessage } from '../../helpers/say_message'
+const { SpeechSynthesisUtterance, speechSynthesis } = window;
 
 import { connect } from 'react-redux'
 import { userRegister } from '../../redux/actions'
@@ -31,8 +34,11 @@ class RegisterPage extends Component{
         email = this.email.value,
         password = this.password.value;
     if(!password || !email || !name) {
+      const msg = new SpeechSynthesisUtterance();
+      setVoice(msg, 'Samantha');
+      sayMessage(msg, 'All fields are required.');
       this.setState({
-        error: 'yo shit wro'
+        error: 'All fields are required'
       });
       return false;
     }
@@ -40,9 +46,13 @@ class RegisterPage extends Component{
       this.props.userRegister({name, email, password})
         .then(res =>{
           if(res.payload.data.user){
+
             JWT.save(res.payload.data);
             this.context.router.replace('/dashboard');
           } else {
+            const msg = new SpeechSynthesisUtterance();
+            setVoice(msg, 'Samantha');
+            sayMessage(msg, res.payload.data.error);
             this.setState({
               error: res.payload.data.error
             });

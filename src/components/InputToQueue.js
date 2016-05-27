@@ -1,11 +1,11 @@
 import React from 'react'
 
-const InputToCue = props => (
+const InputToQueue = props => (
   <div className='col-xs-6'>
     <h3 className='text-center'>Categories?</h3>
     <form 
       className="form-inline add-text-form" 
-      onSubmit={(e) => props.addToCue(e, props.inputText.value)}>
+      onSubmit={(e) => props.addToQueue(e, props.inputText.value)}>
       
       <input
         type="text"
@@ -16,10 +16,10 @@ const InputToCue = props => (
       <button
         type="submit"
         className="btn btn-info">
-        Add To Cue
+        Add To Queue
       </button>
     </form>
   </div>
 );
 
-export default InputToCue
+export default InputToQueue

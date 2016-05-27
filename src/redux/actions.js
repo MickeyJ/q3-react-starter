@@ -48,8 +48,14 @@ export function getUserCategories(id){
   }
 }
 
-export function addPhrase(phrase, user_id){
-  const request = axios.get(`${API}/phrases`, {phrase, user_id});
+export function addPhrase(phrase){
+  console.log('from actions', phrase);
+  const request = axios({
+    url: `${API}/phrases`,
+    method: 'POST',
+    headers: {'Authorization': `Bearer ${JWT.fetch()}`},
+    data: {phrase}
+  });
   return{
     type: ADD_PHRASE,
     payload: request
