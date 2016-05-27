@@ -60,8 +60,17 @@
   }
 }
 
-.word-bank-2, .word-bank-3 {
+.word-bank-1 {
+  margin-right: -3%;
+}
+
+.word-bank-2 {
+  margin-right: -0.2%;
+}
+
+.word-bank-3 {
   padding: 0;
+  margin-right: -5%;
 }
 
 .word-bank-3 {
@@ -69,7 +78,8 @@
 }
 
 .word-bank-4 {
-  margin-right: -2%;
+  margin-left: -0.8%;
+  margin-right: -3.2%;
 }
 
 .pronouns{
@@ -93,7 +103,7 @@
 
 .adjectives {
   height: 50px;
-  width: 100px;
+  width: 90px;
   background-color: rgb(91, 186, 199);
 }
 
