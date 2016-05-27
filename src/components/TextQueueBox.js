@@ -9,8 +9,8 @@ const TextQueueBox = props => (
           key={i}
           onClick={() => props.removeFromQueue(i)}
           className="btn btn-primary word-to-Queue" >
-                {x}
-              </span>
+          {x}
+        </span>
       ))}
     </article>
 

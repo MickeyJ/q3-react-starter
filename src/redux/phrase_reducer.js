@@ -17,7 +17,7 @@ export default function(state = INITIAL_STATE, action) {
 
     case ADD_PHRASE:
       return {...state,
-        phase: action.payload.data.phrase
+        categories: [ action.payload.data.phrase[0], ...state.categories ]
       };
 
     case ADD_CATEGORY:
