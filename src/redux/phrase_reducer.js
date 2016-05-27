@@ -8,12 +8,12 @@ const INITIAL_STATE = { phrases: []};
 
 export default function(state = INITIAL_STATE, action) {
   switch(action.type){
-    
+
     case GET_PHRASES:
       return {...state,
         phrases: action.payload.data.phrases
       };
- 
+
     case ADD_PHRASE:
       return {...state,
         phrases: [ action.payload.data.phrase[0], ...state.phrases ]

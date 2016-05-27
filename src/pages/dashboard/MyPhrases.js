@@ -44,7 +44,7 @@ class MyPhrasesPage extends React.Component{
   render(){
     return(
       <div>
-        <h2>My Phrases</h2>
+        <h2 className="phrases">My Phrases</h2>
         <form className="col-md-6 col-md-offset-3 auth-form" onSubmit={this.handleSubmit.bind(this)}>
           <ErrorBox error={this.state.error}/>
           <input
@@ -55,15 +55,17 @@ class MyPhrasesPage extends React.Component{
           />
           <button className="btn btn-success" type="submit">Add Phrase</button>
         </form>
-        <div className="col-xs-6">
+        <div className="col-xs-12 my-phrases-column">
           <table className="table table-bordered">
-            {this.props.phrases.map((x, i) =>(
-              <tr key={i} className="my-phrase-item">
-                <td className="btn btn-warning" onClick={() => this.deletePhrase(x.id)}>X</td>
-                <td className="phrase-text">{x.phrase}</td>
-              </tr>
-            ))}
-          </table>
+              <tbody>
+                 {this.props.phrases.map((x, i) =>(
+                   <tr key={i} className="my-phrase-item">
+                     <td><button className="btn btn-warning" onClick={() => this.deletePhrase(x.id)}>X</button></td>
+                     <td className="phrase-text">{x.phrase}</td>
+                   </tr>
+                 ))}
+               </tbody>
+             </table>
         </div>
       </div>
     )

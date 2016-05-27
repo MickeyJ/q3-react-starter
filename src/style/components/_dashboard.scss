@@ -24,10 +24,43 @@ span.glyphicon {
   color: white;
 }
 
-.my-phrase-item{
-  span{
-    font-size: 1.3em;
-    margin-right: 2%;
-    margin-bottom: 2%;
+h2.phrases {
+  text-align: center;
+}
+
+.my-phrases-column {
+  display: flex;
+  height: 51vh;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-content: baseline;
+  justify-content: space-around;
+  overflow: auto;
+
+  table {
+    margin: auto;
+    width: 65vw;
+    background-color: rgba(105, 105, 105, 0.65);
+    border-radius: 8px;
+    .my-phrase-item{
+      font-size: 1.1em;
+    };
+  }
+}
+
+td{
+  text-align: center;
+  padding-bottom: 1.5%;
+}
+
+td.phrase-text {
+  text-align: left;
+}
+
+fieldset {
+  margin-top: 1%;
+  text-align: center;
+  label {
+    margin-right: 1%;
   }
 }
