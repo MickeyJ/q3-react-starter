@@ -6,25 +6,14 @@ import SpeakBox from '../../components/SpeakBox';
 const DashIndex = (props) => (
   <div id="dashboard">
 
-    <div className="col-xs-6 dash-box">
+    <div className="col-xs-8 col-xs-offset-2 dash-box">
 
-      <IconLink
-      pathTo={"/profile"}
-      title={"My Profile"}
-      color={"rgb(134, 145, 198)"}
-      icon={"glyphicon glyphicon-user center-block"}
-      />
       <IconLink
       pathTo={"/quick"}
       title={"QuickSpeech"}
       color={"rgba(131, 222, 224, 0.74)"}
       icon={"glyphicon glyphicon-volume-up center-block"}
       />
-
-    </div>
-
-    <div className="col-xs-6 dash-box">
-
       <IconLink
       pathTo={"/phrases"}
       title={"My Phrases"}
