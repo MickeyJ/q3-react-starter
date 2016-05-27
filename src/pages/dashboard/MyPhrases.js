@@ -56,12 +56,14 @@ class MyPhrasesPage extends React.Component{
           <button className="btn btn-success" type="submit">Add Phrase</button>
         </form>
         <div className="col-xs-6">
-          {this.props.phrases.map((x, i) =>(
-            <div key={i} className="my-phrase-item">
-              <span className="btn btn-warning" onClick={() => this.deletePhrase(x.id)}>X</span>
-              <span className="phrase-text">{x.phrase}</span>
-            </div>
-          ))}
+          <table className="table table-bordered">
+            {this.props.phrases.map((x, i) =>(
+              <tr key={i} className="my-phrase-item">
+                <td className="btn btn-warning" onClick={() => this.deletePhrase(x.id)}>X</td>
+                <td className="phrase-text">{x.phrase}</td>
+              </tr>
+            ))}
+          </table>
         </div>
       </div>
     )
