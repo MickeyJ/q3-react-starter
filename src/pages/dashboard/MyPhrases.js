@@ -6,8 +6,7 @@ class MyPhrasesPage extends React.Component{
   constructor(props){
     super(props);
     this.state = {
-      error: null,
-      phrases: []
+      error: null
     }
   }
   sayIt(e, text){

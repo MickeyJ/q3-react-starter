@@ -53,8 +53,7 @@ class Dashboard extends Component{
 
       </div>
     )
-    };
-
+  };
 }
 
 Dashboard.contextTypes = {
