@@ -6,13 +6,13 @@ import TextQueueBox from '../../components/TextQueueBox'
 import WordPhraseBox from '../../components/WordPhraseBox'
 import InputToQueue from '../../components/InputToQueue'
 
-const { SpeechSynthesisUtterance, speechSynthesis } = window;
+const { SpeechSynthesisUtterance } = window;
 
 class ConstructorPage extends Component{
   constructor(){
     super();
     this.state = {
-      textQueue: ['Hello. ']
+      textQueue: ['Hey. ', `What's good? `]
     };
   }
   getInputText(ref){
@@ -40,7 +40,7 @@ class ConstructorPage extends Component{
   }
   removeFromQueue(index){
     this.Queue = this.state.textQueue;
-    this.Queue = this.Queue.filter((x, i) =>i !== index);
+    this.Queue = this.Queue.filter((x, i) => i !== index);
     this.setQueueState(this.Queue);
   }
   sayQueue(){
@@ -49,7 +49,7 @@ class ConstructorPage extends Component{
     this.state.textQueue.map(text =>{
       this.textToSpeak += (text + ' ')
     });
-    setVoice(msg, 'Samantha');
+    setVoice(msg, this.props.selectedVoice);
     sayMessage(msg, this.textToSpeak);
   }
   render(){

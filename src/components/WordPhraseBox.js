@@ -21,7 +21,7 @@ const WordPhraseBox = props => (
           onClick={(e) => props.addToQueue(e, x)}
           className='btn btn-primary negatives'>
           {x}
-       </span>
+        </span>
     ))}
     </div>
     <div className='col-xs-3 word-bank-3'>
@@ -54,7 +54,7 @@ const WordPhraseBox = props => (
         </span>
       ))}
     </div>
-    <div className='col-xs-2 word-bank-1'>
+    <div className='col-xs-2 word-bank-1 my-phrase-cue'>
       {props.myPhrases.map((x, i) =>(
         <span
           key={i}

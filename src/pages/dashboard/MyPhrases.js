@@ -33,6 +33,7 @@ class MyPhrasesPage extends React.Component{
       });
       return false;
     }
+    this.phrase.value = null;
     return (
       this.props.addPhrase(phrase)
         .then(res =>{
@@ -48,7 +49,7 @@ class MyPhrasesPage extends React.Component{
           <ErrorBox error={this.state.error}/>
           <input
             type="text"
-            placeholder="Type Here"
+            placeholder="What do you like to say?"
             className="form-control register"
             ref={(ref) => this.getPhraseText(ref)}
           />
@@ -56,9 +57,9 @@ class MyPhrasesPage extends React.Component{
         </form>
         <div className="col-xs-6">
           {this.props.phrases.map((x, i) =>(
-            <div>
-              <p className="phrase-text" key={i}>{x.phrase}</p>
-              <button onClick={() => this.deletePhrase(x.id)}>X</button>
+            <div key={i} className="my-phrase-item">
+              <span className="btn btn-warning" onClick={() => this.deletePhrase(x.id)}>X</span>
+              <span className="phrase-text">{x.phrase}</span>
             </div>
           ))}
         </div>

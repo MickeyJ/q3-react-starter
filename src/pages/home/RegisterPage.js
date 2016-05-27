@@ -1,20 +1,17 @@
 import React, { Component } from 'react'
-import JWT from '../../helpers/jwt_helper.js'
-
-import { setVoice, sayMessage } from '../../helpers/say_message'
-const { SpeechSynthesisUtterance, speechSynthesis } = window;
-
 import { connect } from 'react-redux'
 import { userRegister } from '../../redux/actions'
 
+import JWT from '../../helpers/jwt_helper.js'
+import { setVoice, sayMessage } from '../../helpers/say_message'
 import ErrorBox from '../../components/ErrorBox'
+
+const { SpeechSynthesisUtterance, speechSynthesis } = window;
 
 class RegisterPage extends Component{
   constructor(){
     super();
-    this.state ={
-      error: false
-    };
+    this.state ={ error: false };
   }
   getNameText(ref){
     this.name = ref
@@ -24,9 +21,6 @@ class RegisterPage extends Component{
   }
   getPassText(ref){
     this.password = ref
-  }
-  onInputChange(e){
-    // console.log(this.email.value);
   }
   handleSubmit(e){
     e.preventDefault();
@@ -42,11 +36,10 @@ class RegisterPage extends Component{
       });
       return false;
     }
-    return (
+    return(
       this.props.userRegister({name, email, password})
         .then(res =>{
           if(res.payload.data.user){
-
             JWT.save(res.payload.data);
             this.context.router.replace('/dashboard');
           } else {
@@ -70,21 +63,18 @@ class RegisterPage extends Component{
           placeholder="Name"
           className="form-control register"
           ref={(ref) => this.getNameText(ref)}
-          onChange={(e) => this.onInputChange(e)}
         />
         <input
           type="text"
           placeholder="Email"
           className="form-control register"
           ref={(ref) => this.getEmailText(ref)}
-          onChange={(e) => this.onInputChange(e)}
         />
         <input
           type="password"
           placeholder="Password"
           className="form-control"
           ref={(ref) => this.getPassText(ref)}
-          onChange={(e) => this.onInputChange(e)}
         />
         <button className="btn btn-success" type="submit">Sign Up</button>
       </form>

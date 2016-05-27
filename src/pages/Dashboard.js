@@ -3,9 +3,15 @@ import { connect } from 'react-redux'
 import { verifyUser, getPhrases, addPhrase, deletePhrase } from '../redux/actions'
 
 import JWT from '../helpers/jwt_helper'
-import SpeakBox from '../components/SpeakBox'
+const { speechSynthesis } = window;
 
 class Dashboard extends Component{
+  constructor(){
+    super();
+    this.state = {
+      selectedVoice: 'Daniel'
+    }
+  }
   componentWillMount(){
     if(!JWT.fetch()){
       this.context.router.replace('/');
@@ -22,18 +28,32 @@ class Dashboard extends Component{
       })
     }
   }
+  changeVoice(e){
+    this.setState({ selectedVoice: e.target.value});
+  }
   render(){
     return (
       <div>
+        <fieldset className="form-inline">
+          <label htmlFor="voice-select" >Select Voice</label>
+            <select id="voice-select" className="form-control" onChange={this.changeVoice.bind(this)} value={this.state.selectedVoice} >
+              {window.speechSynthesis.getVoices().map((voice, i) =>(
+                <option key={i}>{voice.name}</option>
+              ))}
+            </select>
+        </fieldset>
+
         {React.cloneElement(this.props.children, {
           user: this.props.user,
+          selectedVoice: this.state.selectedVoice,
           phrases: this.props.phrases,
           addPhrase: this.props.addPhrase,
           deletePhrase: this.props.deletePhrase
         })}
       </div>
     )
-  }
+    };
+
 }
 
 Dashboard.contextTypes = {
