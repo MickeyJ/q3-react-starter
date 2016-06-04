@@ -1,0 +1,109 @@
+#text-Queue-box{
+  position: relative;
+  width: 100%;
+  height: 100px;
+  border: 1px solid black;
+  border-radius: 10px;
+  background: white;
+  overflow: auto;
+
+  #text-Queue-input{
+    float: left;
+    margin-right: 150px;
+  }
+
+  button{
+    width: 150px;
+  }
+
+  span.delete {
+    display: none;
+    font-size: 10px;
+    position: absolute;
+    top: 4px;
+  }
+
+  span.word-to-Queue{
+    &:hover {
+      span.delete {
+        display: inline;
+      }
+    }
+  }
+
+  #say-Queue-btn{
+    font-size: 1.3em;
+    height: 48px;
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+
+  #clear-Queue-btn{
+    font-size: 1.3em;
+    position: absolute;
+    height: 48px;
+    top: 50px;
+    right: 0;
+  }
+
+  &:after{
+    content: '';
+    display: table;
+    clear: both;
+  }
+
+}
+
+#word-box{
+  float: left;
+  width: 50%;
+  height: 61vh;
+  overflow: auto;
+  background-color: rgb(59, 58, 58);
+}
+
+.word-bank{
+
+  .text-btn{
+    border-color: #535353;
+
+    &:hover{
+      background-color: #dafffa !important;
+      color: black !important;
+    }
+
+  }
+}
+
+#text-Queue-input{
+  span{
+    font-size: 1em;
+  }
+}
+#word-box{
+  span{
+    font-size: 1.4em;
+    margin-right: 5px;
+    margin-bottom: 5px;
+  }
+}
+
+.add-text-form{
+
+  input{
+    height: 56px;
+    font-size: 1.5em;
+    padding: 1% 1%;
+    margin: 1% 0;
+  }
+
+  button{
+    font-size: 1.5em;
+  }
+
+}
+
+#voice-select{
+  margin-bottom: 0.5em;
+}

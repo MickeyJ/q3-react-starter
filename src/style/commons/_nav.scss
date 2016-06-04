@@ -1,0 +1,61 @@
+#top-page{
+  height: 60px;
+  line-height: 60px;
+  margin-bottom: 2%;
+}
+
+nav {
+  float: left;
+
+  i{
+    color: white;
+  }
+
+}
+
+.active{
+  color: rgb(52, 254, 181);
+}
+
+.page-link{
+  color: DodgerBlue;
+}
+
+a{
+  &:focus{
+    color: rgb(52, 254, 181);
+    text-decoration: none;
+  }
+}
+
+.voice-select-form{
+  float: right;
+  //margin-top: 1%;
+  width: 30%;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+  span {
+    color: white;
+    margin-right: 1%;
+  }
+}
+
+.icon-link {
+  display: block;
+  margin-right: 1%;
+  margin-bottom: 1%;
+  width: 280px;
+  height: 300px;
+  color: white;
+  background: CadetBlue;
+  border-radius: 5px 80px 5px 5px;
+  text-decoration: none;
+  &:hover {
+    text-decoration: none;
+    color: rgba(0, 0, 0, 0.74);
+    .icon-link-text {
+      color: rgba(0, 0, 0, 0.74);
+    }
+  }
+}

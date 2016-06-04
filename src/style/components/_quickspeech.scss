@@ -1,0 +1,32 @@
+.qs-list {
+  border-radius: 8px;
+  border: none;
+  color: white;
+}
+
+.quick-speech{
+  width: 100%;
+  height: 71vh;
+  background-color: rgb(59, 58, 58);
+
+  .quick-speech-col{
+    height: inherit;
+    overflow: auto;
+
+  }
+}
+
+.quick-speech-button {
+  color: white;
+  padding: 5% 0;
+  width: 100%;
+  height: 100px;
+  line-height: 40px;
+  margin: 2% 0 2% 0;
+  background-color: rgba(90, 157, 228, 0.83);
+  font-size: 1.4em;
+}
+
+.quick-speech {
+  margin-top: 3%;
+}
